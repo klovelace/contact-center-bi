@@ -416,8 +416,8 @@ function renderAll() {
   legend("legendShare", ["Self-service", "Assisted digital", "In person"].map(g => ({ name: g, color: css(gColor[g]), line: true })));
   const shareSeries = g => D.channel_groups[g].map((v, i) => v / total[i]);
   const shareMax = Math.ceil(Math.max(...["Self-service", "Assisted digital", "In person"].flatMap(shareSeries)) / 0.05) * 0.05;
-  lineChart("chShare", { x: months, yFmt: v => (v * 100).toFixed(0) + "%", r: 44, max: shareMax, nTicks: Math.round(shareMax / 0.05),
-    series: ["Self-service", "Assisted digital", "In person"].map(g => ({ name: g, color: gColor[g], values: shareSeries(g), label: g === "Self-service" })) });
+  lineChart("chShare", { x: months, yFmt: v => (v * 100).toFixed(0) + "%", r: 104, max: shareMax, nTicks: Math.round(shareMax / 0.05),
+    series: ["Self-service", "Assisted digital", "In person"].map(g => ({ name: g, color: gColor[g], values: shareSeries(g), label: g === "Self-service", endLabel: "Self-service " })) });
 
   columns("chSL", { labels: sl.map(r => String(r.year)), values: sl.map(r => r.service_level), max: 1, labelAll: true, yFmt: v => (v * 100).toFixed(0) + "%",
     colorOf: i => sl[i].service_level >= sl[i].target ? "--s1" : "--crit", tick: i => String(sl[i].year), target: 0.8, targetLabel: "Target 80%",

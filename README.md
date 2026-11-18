@@ -2,6 +2,8 @@
 
 **Live dashboard:** https://klovelace.github.io/contact-center-bi/
 
+[![Dashboard preview](docs/preview.png)](https://klovelace.github.io/contact-center-bi/)
+
 An end-to-end business intelligence build for a large public contact centre, the 311 Toronto Contact Centre. It handles about 1.3 million contacts a year across phone, email, chat, social, web, mobile and in-person counters.
 
 The project covers what a contact-centre BI function delivers:
