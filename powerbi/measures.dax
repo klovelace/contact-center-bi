@@ -1,0 +1,93 @@
+// Contact Centre Operations BI: DAX measures
+// Load the CSVs in data/model/ and create the relationships listed in powerbi/BUILD.md,
+// then add these measures to a "_Measures" table.
+
+// ---------- Contacts and channel shift ----------
+Contacts = SUM ( fact_contacts_monthly[contacts] )
+
+Phone Contacts =
+CALCULATE ( [Contacts], dim_channel[channel_group] = "Agent voice" )
+
+Self-Service Contacts =
+CALCULATE ( [Contacts], dim_channel[channel_group] = "Self-service" )
+
+Digital Contacts =
+CALCULATE ( [Contacts], dim_channel[is_digital] = TRUE () )
+
+Phone Share = DIVIDE ( [Phone Contacts], [Contacts] )
+
+Self-Service Share = DIVIDE ( [Self-Service Contacts], [Contacts] )
+
+Digital Share = DIVIDE ( [Digital Contacts], [Contacts] )
+
+Contacts T12M =
+CALCULATE (
+    [Contacts],
+    DATESINPERIOD ( dim_date[date], MAX ( dim_date[date] ), -12, MONTH )
+)
+
+Contacts Prior T12M =
+CALCULATE (
+    [Contacts],
+    DATESINPERIOD ( dim_date[date], EDATE ( MAX ( dim_date[date] ), -12 ), -12, MONTH )
+)
+
+Contacts T12M vs Prior % = DIVIDE ( [Contacts T12M] - [Contacts Prior T12M], [Contacts Prior T12M] )
+
+Phone Share T12M =
+CALCULATE (
+    [Phone Share],
+    DATESINPERIOD ( dim_date[date], MAX ( dim_date[date] ), -12, MONTH )
+)
+
+Phone Share Change pts =
+[Phone Share T12M]
+    - CALCULATE (
+        [Phone Share],
+        DATESINPERIOD ( dim_date[date], EDATE ( MAX ( dim_date[date] ), -12 ), -12, MONTH )
+    )
+
+// ---------- Service level ----------
+Service Level = AVERAGE ( fact_service_level_annual[service_level] )
+
+Service Level Target = AVERAGE ( fact_service_level_annual[target] )
+
+Service Level Gap pts = [Service Level] - [Service Level Target]
+
+Service Level Status =
+IF ( [Service Level] >= [Service Level Target], "✓ Met", "✕ Missed" )
+
+// ---------- Follow-up (failure) demand ----------
+Status Inquiries = SUM ( fact_status_inquiries_quarterly[status_inquiries] )
+
+// The pipeline stores each quarter's all-channel contact total beside its status
+// inquiries, so the rate stays correct at any quarter/year roll-up.
+Contacts In Quarter = SUM ( fact_status_inquiries_quarterly[contacts] )
+
+Follow-Up Contact Rate = DIVIDE ( [Status Inquiries], [Contacts In Quarter] )
+
+// ---------- Service requests ----------
+Service Requests = SUM ( fact_service_requests_monthly[requests] )
+
+Requests Completed =
+CALCULATE ( [Service Requests], fact_service_requests_monthly[status] IN { "Completed", "Closed" } )
+
+Completion Rate = DIVIDE ( [Requests Completed], [Service Requests] )
+
+Requests per Hour (avg) =
+DIVIDE (
+    SUM ( fact_service_requests_hourly[requests] ),
+    DISTINCTCOUNT ( fact_service_requests_hourly[date] )
+)
+
+// ---------- Forecast ----------
+Phone Actual = SUM ( forecast_phone_monthly[actual] )
+
+Phone Forecast = SUM ( forecast_phone_monthly[forecast] )
+
+Phone Forecast Low 80 = SUM ( forecast_phone_monthly[lo80] )
+
+Phone Forecast High 80 = SUM ( forecast_phone_monthly[hi80] )
+
+Forecast Next 12M =
+CALCULATE ( [Phone Forecast], forecast_phone_monthly[forecast] > 0 )

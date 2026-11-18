@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Centre Operations BI</title>
+<meta name="description" content="Operations BI for the 311 Toronto contact centre: channel shift, service level, follow-up demand, intraday demand, a 12-month call forecast and an Erlang C staffing model, built on City of Toronto open data.">
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink-2: #52514e; --muted: #898781;
+  --grid: #e1e0d9; --axis: #c3c2b7; --ring: rgba(11,11,11,0.10);
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100;
+  --good: #0ca30c; --good-text: #006300; --warn: #fab219; --crit: #d03b3b;
+  --seq-0: #f0efec; --seq-1: #cde2fb; --seq-2: #86b6ef; --seq-3: #3987e5; --seq-4: #1c5cab; --seq-5: #0d366b;
+  --band: rgba(42,120,214,0.10);
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
+    --good: #0ca30c; --good-text: #0ca30c;
+    --seq-0: #262624; --seq-1: #104281; --seq-2: #1c5cab; --seq-3: #3987e5; --seq-4: #86b6ef; --seq-5: #cde2fb;
+    --band: rgba(57,135,229,0.16);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #f0efec; --ink-2: #c3c2b7; --muted: #898781;
+  --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
+  --good: #0ca30c; --good-text: #0ca30c;
+  --seq-0: #262624; --seq-1: #104281; --seq-2: #1c5cab; --seq-3: #3987e5; --seq-4: #86b6ef; --seq-5: #cde2fb;
+  --band: rgba(57,135,229,0.16);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 1180px; margin: 0 auto; padding: 32px 16px 64px; }
+header h1 { font-size: 28px; line-height: 1.2; margin: 0 0 6px; font-weight: 650; letter-spacing: -0.01em; }
+header p { margin: 0; color: var(--ink-2); max-width: 820px; }
+.meta { font-size: 13px; color: var(--muted); margin-top: 10px; }
+.meta a, a { color: var(--s1); }
+h2 { font-size: 18px; margin: 40px 0 4px; font-weight: 650; }
+.lede { color: var(--ink-2); margin: 0 0 14px; max-width: 860px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-top: 24px; }
+.tile, .card { background: var(--surface); border: 1px solid var(--ring); border-radius: 10px; }
+.tile { padding: 14px 16px; }
+.tile .label { font-size: 13px; color: var(--ink-2); }
+.tile .value { font-size: 28px; font-weight: 650; margin-top: 2px; }
+.tile .delta { font-size: 13px; color: var(--ink-2); margin-top: 2px; }
+.tile .delta.good { color: var(--good-text); }
+.hero .value { font-size: 48px; line-height: 1.1; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 860px) { .grid2 { grid-template-columns: 1fr; } }
+.card { padding: 16px 16px 10px; min-width: 0; }
+.card h3 { font-size: 15px; margin: 0; font-weight: 600; }
+.card .sub { font-size: 13px; color: var(--ink-2); margin: 2px 0 8px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--ink-2); margin: 4px 0 6px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.key-rect { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.key-line { width: 16px; height: 2px; border-radius: 1px; display: inline-block; }
+.key-dash { width: 16px; height: 0; border-top: 2px dashed; display: inline-block; }
+svg { display: block; width: 100%; overflow: visible; }
+svg text { font-family: inherit; }
+.axis text { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.dlabel { fill: var(--ink-2); font-size: 12px; }
+.dlabel.strong { fill: var(--ink); font-weight: 600; }
+details { margin: 6px 0 4px; font-size: 13px; color: var(--ink-2); }
+summary { cursor: pointer; color: var(--muted); }
+table { border-collapse: collapse; width: 100%; font-size: 13px; margin-top: 6px; }
+th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.scroll { overflow-x: auto; }
+.findings { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+.finding { background: var(--surface); border: 1px solid var(--ring); border-radius: 10px; padding: 14px 16px; }
+.finding b { display: block; margin-bottom: 4px; }
+.finding p { margin: 0; color: var(--ink-2); font-size: 14px; }
+.finding .act { margin-top: 8px; color: var(--ink); font-size: 14px; }
+#tip { position: fixed; pointer-events: none; background: var(--surface); color: var(--ink); border: 1px solid var(--ring);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12); border-radius: 8px; padding: 8px 10px; font-size: 12px; display: none; z-index: 10; min-width: 140px; }
+#tip .t { color: var(--ink-2); margin-bottom: 4px; }
+#tip .r { display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+#tip .r b { font-variant-numeric: tabular-nums; }
+#tip .r span { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-2); }
+.controls { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: end; margin: 6px 0 12px; font-size: 13px; color: var(--ink-2); }
+.controls label { display: flex; flex-direction: column; gap: 4px; }
+.controls input, .controls select { font: inherit; color: var(--ink); background: var(--page); border: 1px solid var(--axis); border-radius: 6px; padding: 5px 8px; min-width: 120px; }
+.staff-out { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 6px 0 8px; }
+.status { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; }
+.note { font-size: 12px; color: var(--muted); margin: 6px 0 0; }
+footer { margin-top: 48px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--grid); padding-top: 16px; }
+.theme-btn { float: right; font: inherit; font-size: 13px; color: var(--ink-2); background: var(--surface); border: 1px solid var(--ring); border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <button class="theme-btn" id="themeBtn" type="button">Toggle theme</button>
+  <h1>311 Toronto Contact Centre: Operations BI</h1>
+  <p>Channel shift, service level, follow-up demand, intraday demand, a 12-month call-volume forecast and an Erlang C staffing model for a contact centre handling about 1.3 million contacts a year, built end to end from public data.</p>
+  <div class="meta" id="meta"></div>
+</header>
+
+<section class="tiles" id="tiles" aria-label="Headline KPIs"></section>
+
+<h2>What the data says</h2>
+<p class="lede">Four findings and the operating decision each one points to.</p>
+<div class="findings" id="findings"></div>
+
+<h2>Channel shift</h2>
+<p class="lede">Digital channels are taking share from the phone queue. Self-service (web and mobile) has more than doubled its share since 2022.</p>
+<div class="grid2">
+  <div class="card"><h3>Contacts per month, by channel group</h3><div class="sub">All channels. Mail is excluded (under 10 contacts a month).</div><div id="legendMix" class="legend"></div><div id="chMix"></div><details><summary>View as table</summary><div class="scroll" id="tblMix"></div></details></div>
+  <div class="card"><h3>Share of contacts, by channel group</h3><div class="sub">Monthly share of all contacts, %. Phone (the rest) is in the chart to the left. The Feb–Mar 2022 counter-visit spike is flagged in the data-quality log.</div><div id="legendShare" class="legend"></div><div id="chShare"></div><details><summary>View as table</summary><div class="scroll" id="tblShare"></div></details></div>
+</div>
+
+<h2>Service and follow-up demand</h2>
+<p class="lede">The phone queue has met its 80/75 target three years running, but the margin is thin. Follow-up "where is my request?" contacts peak every summer.</p>
+<div class="grid2">
+  <div class="card"><h3>Phone service level vs. target</h3><div class="sub">Share of calls answered within 75 seconds, by year. Target 80%.</div><div id="chSL"></div><details><summary>View as table</summary><div class="scroll" id="tblSL"></div></details></div>
+  <div class="card"><h3>Follow-up contact rate</h3><div class="sub">Status inquiries on an existing request as a share of all contacts, by quarter.</div><div id="chFU"></div><details><summary>View as table</summary><div class="scroll" id="tblFU"></div></details></div>
+</div>
+
+<h2>Forecast and staffing</h2>
+<p class="lede">A damped Holt-Winters model forecasts monthly phone volume 12 months out. It feeds an Erlang C model that sizes the peak-hour team needed to hold 80/75.</p>
+<div class="card"><h3>Phone contacts per month: actual and 12-month forecast</h3><div class="sub" id="fcSub"></div>
+  <div class="legend"><span><i class="key-line" style="background:var(--s1)"></i>Actual</span><span><i class="key-dash" style="border-color:var(--s1)"></i>Forecast</span><span><i class="key-rect" style="background:var(--band)"></i>80% interval</span></div>
+  <div id="chFC"></div><details><summary>View as table</summary><div class="scroll" id="tblFC"></div></details></div>
+
+<div class="card" style="margin-top:16px"><h3>Staffing what-if (Erlang C)</h3>
+  <div class="sub">Agents needed in the peak hour of a forecast month to answer 80% of calls within 75 seconds. Average handle time and shrinkage are planning assumptions, not published data; change them to test the plan.</div>
+  <div class="controls">
+    <label>Forecast month<select id="stMonth"></select></label>
+    <label>Avg handle time (min)<input id="stAht" type="number" min="2" max="20" step="0.5" value="6"></label>
+    <label>Shrinkage (%)<input id="stShr" type="number" min="0" max="60" step="1" value="35"></label>
+  </div>
+  <div class="staff-out" id="stOut"></div>
+  <p class="note" id="stNote"></p>
+</div>
+
+<h2>When and why people contact 311</h2>
+<p class="lede">Demand is a weekday, business-hours pattern. Billing questions lead the general inquiries, which makes them the clearest self-service opportunity.</p>
+<div class="card"><h3>Average service requests per hour, by weekday and hour</h3><div class="sub" id="heatSub"></div><div id="chHeat"></div><div id="heatKey" class="legend"></div><details><summary>View as table</summary><div class="scroll" id="tblHeat"></div></details></div>
+<div class="grid2" style="margin-top:16px">
+  <div class="card"><h3 id="giTitle">Top general inquiries</h3><div class="sub">Phone, email, chat and social inquiries about City services.</div><div id="chGI"></div><details><summary>View as table</summary><div class="scroll" id="tblGI"></div></details></div>
+  <div class="card"><h3>Top service-request types, last 12 months</h3><div class="sub">Requests created, all channels.</div><div id="chSR"></div><details><summary>View as table</summary><div class="scroll" id="tblSR"></div></details></div>
+</div>
+
+<h2>Data governance</h2>
+<p class="lede">Every KPI above has a written definition, and every load runs automated quality checks. The raw service-request CSV is unquoted, so about 35,000 rows a year split on a comma inside a division name; the pipeline detects and repairs them, and logs every rejected row.</p>
+<div class="card"><h3>KPI dictionary</h3><div class="scroll" id="tblDict"></div></div>
+<div class="card" style="margin-top:16px"><h3>Data-quality checks, latest load</h3><div class="scroll" id="tblDQ"></div></div>
+
+<footer id="footer"></footer>
+</main>
+<div id="tip" role="status" aria-live="polite"></div>
+
+<script>
+const D = /*__DATA__*/null;
+const qTheme = new URLSearchParams(location.search).get("theme");
+if (qTheme === "light" || qTheme === "dark") document.documentElement.dataset.theme = qTheme;
+
+/* ---------- helpers ---------- */
+const $ = id => document.getElementById(id);
+const NS = "http://www.w3.org/2000/svg";
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const fmtInt = n => Math.round(n).toLocaleString("en-US");
+const fmtK = n => Math.abs(n) >= 1e6 ? (n / 1e6).toFixed(n >= 1e7 ? 0 : 2).replace(/\.?0+$/, "") + "M" : Math.abs(n) >= 1e4 ? Math.round(n / 1e3) + "K" : fmtInt(n);
+const fmtPct = (v, d = 1) => (v * 100).toFixed(d) + "%";
+const monthLabel = ym => { const [y, m] = ym.split("-"); return new Date(+y, +m - 1, 1).toLocaleString("en-US", { month: "short", year: "numeric" }); };
+function el(tag, attrs = {}, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function txt(tag, text, attrs, parent) { const e = el(tag, attrs, parent); e.textContent = text; return e; }
+function niceMax(v) { const p = Math.pow(10, Math.floor(Math.log10(v))); for (const m of [1, 1.2, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10]) if (m * p >= v) return m * p; return 10 * p; }
+function ticks(max, n = 4) { const step = max / n; return Array.from({ length: n + 1 }, (_, i) => i * step); }
+
+const tip = $("tip");
+function showTip(evt, title, rows) {
+  tip.replaceChildren();
+  const t = document.createElement("div"); t.className = "t"; t.textContent = title; tip.appendChild(t);
+  for (const r of rows) {
+    const row = document.createElement("div"); row.className = "r";
+    const s = document.createElement("span");
+    if (r.color) { const k = document.createElement("i"); k.className = r.dash ? "key-dash" : "key-line"; if (r.dash) k.style.borderColor = r.color; else k.style.background = r.color; s.appendChild(k); }
+    s.appendChild(document.createTextNode(r.name));
+    const b = document.createElement("b"); b.textContent = r.value;
+    row.append(b, s); tip.appendChild(row);
+  }
+  tip.style.display = "block";
+  const x = evt.clientX + 14, y = evt.clientY + 14, w = tip.offsetWidth, h = tip.offsetHeight;
+  tip.style.left = Math.min(x, innerWidth - w - 8) + "px"; tip.style.top = Math.min(y, innerHeight - h - 8) + "px";
+}
+const hideTip = () => tip.style.display = "none";
+
+function legend(id, items) {
+  const L = $(id); L.replaceChildren();
+  for (const it of items) { const s = document.createElement("span"); const k = document.createElement("i"); k.className = it.line ? "key-line" : "key-rect"; k.style.background = it.color; s.append(k, document.createTextNode(it.name)); L.appendChild(s); }
+}
+function table(id, head, rows, numCols = []) {
+  const t = document.createElement("table"); const tr = document.createElement("tr");
+  head.forEach((h, i) => { const th = document.createElement("th"); th.textContent = h; if (numCols.includes(i)) th.className = "num"; tr.appendChild(th); });
+  const thead = document.createElement("thead"); thead.appendChild(tr); t.appendChild(thead);
+  const tb = document.createElement("tbody");
+  for (const r of rows) { const tr2 = document.createElement("tr"); r.forEach((c, i) => { const td = document.createElement("td"); td.textContent = c; if (numCols.includes(i)) td.className = "num"; tr2.appendChild(td); }); tb.appendChild(tr2); }
+  t.appendChild(tb); $(id).replaceChildren(t);
+}
+function frame(id, h, m) {
+  const host = $(id); host.replaceChildren();
+  const W = Math.max(300, host.clientWidth), svg = el("svg", { viewBox: `0 0 ${W} ${h}`, height: h, role: "img" }, host);
+  return { svg, W, H: h, x0: m.l, x1: W - m.r, y0: m.t, y1: h - m.b };
+}
+function yAxis(f, max, fmt, n = 4) {
+  const g = el("g", { class: "axis" }, f.svg);
+  for (const v of ticks(max, n)) {
+    const y = f.y1 - (v / max) * (f.y1 - f.y0);
+    el("line", { x1: f.x0, x2: f.x1, y1: y, y2: y, stroke: v === 0 ? css("--axis") : css("--grid"), "stroke-width": 1 }, g);
+    txt("text", fmt(v), { x: f.x0 - 8, y: y + 4, "text-anchor": "end" }, g);
+  }
+}
+function xAxisMonths(f, months, xOf, every = 12) {
+  const g = el("g", { class: "axis" }, f.svg);
+  months.forEach((m, i) => { if (m.endsWith("-01") && i % 1 === 0) txt("text", m.slice(0, 4), { x: xOf(i), y: f.y1 + 16, "text-anchor": "middle" }, g); });
+}
+
+/* ---------- derived numbers ---------- */
+const months = D.months, n = months.length;
+const groups = ["Agent voice", "Assisted digital", "Self-service", "In person"];
+const gColor = { "Agent voice": "--s1", "Assisted digital": "--s2", "Self-service": "--s3", "In person": "--s4" };
+const total = D.total_contacts;
+const sum = (a, i0, i1) => a.slice(i0, i1).reduce((s, v) => s + v, 0);
+const t12 = sum(total, n - 12, n), p12 = sum(total, n - 24, n - 12);
+const share = (g, i0, i1) => sum(D.channel_groups[g], i0, i1) / sum(total, i0, i1);
+const phoneT12 = share("Agent voice", n - 12, n), phoneP12 = share("Agent voice", n - 24, n - 12);
+const selfT12 = share("Self-service", n - 12, n), selfP12 = share("Self-service", n - 24, n - 12);
+const self2022 = share("Self-service", 0, 12);
+const sl = D.service_level, slLast = sl[sl.length - 1];
+const fu = D.follow_up, fuT4 = fu.slice(-4).reduce((s, r) => s + r.status_inquiries, 0) / fu.slice(-4).reduce((s, r) => s + r.contacts, 0);
+const fuP4 = fu.slice(-8, -4).reduce((s, r) => s + r.status_inquiries, 0) / fu.slice(-8, -4).reduce((s, r) => s + r.contacts, 0);
+const F = D.forecast, fIdx = F.forecast.map((v, i) => v != null ? i : -1).filter(i => i >= 0);
+const fc12 = fIdx.reduce((s, i) => s + F.forecast[i], 0);
+const lastAct = F.actual.map((v, i) => v != null ? i : -1).filter(i => i >= 0);
+const act12 = lastAct.slice(-12).reduce((s, i) => s + F.actual[i], 0);
+const heatVals = D.heatmap.values, weekTotal = heatVals.flat().reduce((a, b) => a + b, 0);
+let peak = { v: 0 }; heatVals.forEach((r, d) => r.forEach((v, h) => { if (v > peak.v) peak = { v, d, h }; }));
+const peakShare = peak.v / weekTotal;
+const lastMonth = monthLabel(months[n - 1]);
+
+/* ---------- meta, tiles, findings ---------- */
+$("meta").textContent = `Data: City of Toronto Open Data, Jan 2022 to ${lastMonth} · ${fmtInt(D.sr_total)} service requests · built ${D.built}`;
+function tile(label, value, delta, cls = "", hero = false) {
+  const d = document.createElement("div"); d.className = "tile" + (hero ? " hero" : "");
+  const a = document.createElement("div"); a.className = "label"; a.textContent = label;
+  const b = document.createElement("div"); b.className = "value"; b.textContent = value; d.append(a, b);
+  if (delta) { const c = document.createElement("div"); c.className = "delta " + cls; c.textContent = delta; d.appendChild(c); }
+  $("tiles").appendChild(d);
+}
+const pp = v => (v >= 0 ? "+" : "−") + Math.abs(v * 100).toFixed(1) + " pts";
+tile("Contacts, last 12 months", fmtK(t12), `${t12 >= p12 ? "+" : "−"}${Math.abs((t12 / p12 - 1) * 100).toFixed(1)}% vs prior 12 months`, "", true);
+tile("Phone share of contacts", fmtPct(phoneT12), `${pp(phoneT12 - phoneP12)} vs prior 12 months`, phoneT12 < phoneP12 ? "good" : "");
+tile("Self-service share", fmtPct(selfT12), `${pp(selfT12 - selfP12)} vs prior 12 months`, selfT12 > selfP12 ? "good" : "");
+tile(`Service level, ${slLast.year}`, fmtPct(slLast.service_level), `Target ${fmtPct(slLast.target, 0)} answered in 75s · ${slLast.service_level >= slLast.target ? "met" : "missed"}`, slLast.service_level >= slLast.target ? "good" : "");
+tile("Follow-up contact rate", fmtPct(fuT4), `Last 4 quarters · ${pp(fuT4 - fuP4)} vs prior 4`, fuT4 < fuP4 ? "good" : "");
+tile("Forecast phone contacts, next 12 months", fmtK(fc12), `${fc12 >= act12 ? "+" : "−"}${Math.abs((fc12 / act12 - 1) * 100).toFixed(1)}% vs last 12 months`);
+
+const gi = D.top_inquiries_latest.rows, giTotal = gi.reduce((s, r) => s + r.inquiries, 0);
+const billing = gi.filter(r => /bill|tax|payment/i.test(r.topic)).reduce((s, r) => s + r.inquiries, 0);
+const fuMaxQ = fu.reduce((a, r) => r.follow_up_rate > a.follow_up_rate ? r : a);
+const findings = [
+  ["Self-service share has more than doubled.", `Web and mobile went from ${fmtPct(self2022)} of contacts in 2022 to ${fmtPct(selfT12)} in the last 12 months, while the phone share fell ${Math.abs((phoneT12 - share("Agent voice", 0, 12)) * 100).toFixed(1)} points.`, "Move the highest-volume phone topics online first, and track the phone share as the headline channel KPI."],
+  ["The service-level margin is thin.", `The phone queue hit ${fmtPct(slLast.service_level)} in ${slLast.year} against an 80% target, after missing it in 2022 (${fmtPct(sl[0].service_level)}). A small rise in volume or handle time puts it at risk.`, "Staff the peak hours to the forecast, using the Erlang C model below, rather than to last year's average."],
+  ["Follow-up contacts are avoidable demand.", `${fmtPct(fuT4)} of contacts are people asking about a request they already made. The rate rises every summer and peaked at ${fmtPct(fuMaxQ.follow_up_rate)} in ${fuMaxQ.quarter_key}.`, "Send proactive status updates on the request types with the longest close times, and count follow-ups as failure demand."],
+  ["Billing drives general inquiries.", `In ${D.top_inquiries_latest.period}, billing, tax and payment topics were ${fmtPct(billing / giTotal, 0)} of the top-10 general inquiries; property tax billing alone was ${fmtInt(gi[0].inquiries)}.`, "Work with Revenue Services on bill design and online account tools; that is the biggest single lever on phone volume."],
+];
+for (const [h, p, a] of findings) { const d = document.createElement("div"); d.className = "finding"; const b = document.createElement("b"); b.textContent = h; const pp2 = document.createElement("p"); pp2.textContent = p; const ac = document.createElement("p"); ac.className = "act"; ac.textContent = "→ " + a; d.append(b, pp2, ac); $("findings").appendChild(d); }
+
+/* ---------- charts ---------- */
+function stackedMix() {
+  const f = frame("chMix", 260, { l: 44, r: 8, t: 10, b: 24 });
+  const max = niceMax(Math.max(...total)); yAxis(f, max, fmtK);
+  const bw = (f.x1 - f.x0) / n, barW = Math.min(24, bw - 2), xOf = i => f.x0 + bw * i + bw / 2;
+  const ys = v => (v / max) * (f.y1 - f.y0);
+  for (let i = 0; i < n; i++) {
+    let y = f.y1;
+    const g = el("g", { tabindex: 0 }, f.svg);
+    groups.forEach((gname, gi2) => {
+      const v = D.channel_groups[gname][i], h = ys(v); if (h <= 0) return;
+      const top = gi2 === groups.length - 1 || groups.slice(gi2 + 1).every(o => D.channel_groups[o][i] === 0);
+      const hh = Math.max(0, h - 2), x = xOf(i) - barW / 2;
+      if (top && hh > 4) el("path", { d: `M${x},${y} v${-(hh - 2)} q0,-2 2,-2 h${barW - 4} q2,0 2,2 v${hh - 2} z`, fill: css(gColor[gname]) }, g);
+      else el("rect", { x, y: y - hh, width: barW, height: hh, fill: css(gColor[gname]) }, g);
+      y -= h;
+    });
+    el("rect", { x: f.x0 + bw * i, y: f.y0, width: bw, height: f.y1 - f.y0, fill: "transparent" }, g);
+    const rows = groups.map(gname => ({ name: gname, value: fmtInt(D.channel_groups[gname][i]), color: css(gColor[gname]) }));
+    rows.push({ name: "Total", value: fmtInt(total[i]) });
+    const on = e => { g.style.opacity = 0.85; showTip(e, monthLabel(months[i]), rows); };
+    g.addEventListener("pointermove", on); g.addEventListener("pointerleave", () => { g.style.opacity = 1; hideTip(); });
+    g.addEventListener("focus", () => { const r = g.getBoundingClientRect(); on({ clientX: r.right, clientY: r.top }); }); g.addEventListener("blur", hideTip);
+  }
+  xAxisMonths(f, months, xOf);
+}
+function lineChart(id, opts) {
+  const f = frame(id, opts.h || 260, { l: 48, r: opts.r || 70, t: 12, b: 24 });
+  const all = opts.series.flatMap(s => s.values.concat(s.hi || [])).filter(v => v != null);
+  const max = opts.max || niceMax(Math.max(...all)); yAxis(f, max, opts.yFmt, opts.nTicks || 4);
+  const N = opts.x.length, xOf = i => f.x0 + (f.x1 - f.x0) * (i / (N - 1)), yOf = v => f.y1 - (v / max) * (f.y1 - f.y0);
+  for (const s of opts.series) {
+    if (s.lo) {
+      const idx = s.lo.map((v, i) => v != null ? i : -1).filter(i => i >= 0);
+      const d = idx.map((i, k) => (k ? "L" : "M") + xOf(i) + "," + yOf(s.hi[i])).join("") + idx.slice().reverse().map(i => "L" + xOf(i) + "," + yOf(s.lo[i])).join("") + "Z";
+      el("path", { d, fill: css("--band") }, f.svg);
+    }
+    let d = "", pen = false;
+    s.values.forEach((v, i) => { if (v == null) { pen = false; return; } d += (pen ? "L" : "M") + xOf(i) + "," + yOf(v); pen = true; });
+    el("path", { d, fill: "none", stroke: css(s.color), "stroke-width": 2, "stroke-linejoin": "round", "stroke-linecap": "round", "stroke-dasharray": s.dash ? "5 4" : "none" }, f.svg);
+    const li = s.values.map((v, i) => v != null ? i : -1).filter(i => i >= 0).pop();
+    el("circle", { cx: xOf(li), cy: yOf(s.values[li]), r: 4, fill: css(s.color), stroke: css("--surface"), "stroke-width": 2 }, f.svg);
+    if (s.label !== false) txt("text", (s.endLabel || "") + opts.yFmt(s.values[li]), { x: xOf(li) + 8, y: yOf(s.values[li]) + 4 + (s.dy || 0), class: "dlabel" }, f.svg);
+  }
+  xAxisMonths(f, opts.x, xOf);
+  const cross = el("line", { y1: f.y0, y2: f.y1, stroke: css("--axis"), "stroke-width": 1, visibility: "hidden" }, f.svg);
+  const hit = el("rect", { x: f.x0, y: f.y0, width: f.x1 - f.x0, height: f.y1 - f.y0, fill: "transparent", tabindex: 0 }, f.svg);
+  const at = (e, i) => {
+    cross.setAttribute("x1", xOf(i)); cross.setAttribute("x2", xOf(i)); cross.setAttribute("visibility", "visible");
+    const rows = []; for (const s of opts.series) { if (s.values[i] != null) rows.push({ name: s.name, value: opts.yFmt(s.values[i]), color: css(s.color), dash: s.dash }); if (s.lo && s.lo[i] != null) rows.push({ name: "80% interval", value: `${opts.yFmt(s.lo[i])}–${opts.yFmt(s.hi[i])}` }); }
+    showTip(e, monthLabel(opts.x[i]), rows);
+  };
+  hit.addEventListener("pointermove", e => { const r = f.svg.getBoundingClientRect(), sx = (e.clientX - r.left) * (f.W / r.width); at(e, Math.max(0, Math.min(N - 1, Math.round((sx - f.x0) / (f.x1 - f.x0) * (N - 1))))); });
+  hit.addEventListener("pointerleave", () => { cross.setAttribute("visibility", "hidden"); hideTip(); });
+}
+function columns(id, opts) {
+  const f = frame(id, opts.h || 220, { l: 44, r: opts.target != null ? 78 : 8, t: 22, b: 24 });
+  const max = opts.max; yAxis(f, max, opts.yFmt, opts.nTicks || 4);
+  const N = opts.labels.length, bw = (f.x1 - f.x0) / N, barW = Math.min(24, bw - 2), yOf = v => f.y1 - (v / max) * (f.y1 - f.y0);
+  const ax = el("g", { class: "axis" }, f.svg);
+  opts.values.forEach((v, i) => {
+    const x = f.x0 + bw * i + bw / 2 - barW / 2, y = yOf(v), h = f.y1 - y, g = el("g", { tabindex: 0 }, f.svg);
+    el("path", { d: `M${x},${f.y1} v${-(h - 4)} q0,-4 4,-4 h${barW - 8} q4,0 4,4 v${h - 4} z`, fill: css(opts.colorOf ? opts.colorOf(i) : "--s1") }, g);
+    el("rect", { x: f.x0 + bw * i, y: f.y0, width: bw, height: f.y1 - f.y0, fill: "transparent" }, g);
+    if (opts.labelAll || i === N - 1 || (opts.labelIdx || []).includes(i)) txt("text", opts.yFmt(v, true), { x: x + barW / 2, y: y - 6, "text-anchor": "middle", class: "dlabel" + (i === N - 1 ? " strong" : "") }, f.svg);
+    if (opts.tick(i)) txt("text", opts.tick(i), { x: x + barW / 2, y: f.y1 + 16, "text-anchor": "middle" }, ax);
+    const on = e => { g.style.opacity = 0.8; showTip(e, opts.labels[i], opts.rows(i)); };
+    g.addEventListener("pointermove", on); g.addEventListener("pointerleave", () => { g.style.opacity = 1; hideTip(); });
+    g.addEventListener("focus", () => { const r = g.getBoundingClientRect(); on({ clientX: r.right, clientY: r.top }); }); g.addEventListener("blur", hideTip);
+  });
+  if (opts.target != null) {
+    const y = yOf(opts.target);
+    el("line", { x1: f.x0, x2: f.x1, y1: y, y2: y, stroke: css("--ink-2"), "stroke-width": 1.5 }, f.svg);
+    txt("text", opts.targetLabel, { x: f.x1 + 6, y: y + 4, class: "dlabel" }, f.svg);
+  }
+}
+function hbars(id, rows, color) {
+  const host = $(id); host.replaceChildren();
+  const W = Math.max(300, host.clientWidth), lw = Math.min(300, W * 0.52), rowH = 30, h = rows.length * rowH + 4;
+  const svg = el("svg", { viewBox: `0 0 ${W} ${h}`, height: h, role: "img" }, host);
+  const max = Math.max(...rows.map(r => r.value)), bx = lw + 8, bmax = W - bx - 56;
+  rows.forEach((r, i) => {
+    const y = i * rowH + 4, w = Math.max(6, r.value / max * bmax), g = el("g", { tabindex: 0 }, svg);
+    let label = r.label; const maxChars = Math.floor(lw / 6.6); if (label.length > maxChars) label = label.slice(0, maxChars - 1) + "…";
+    txt("text", label, { x: lw, y: y + 15, "text-anchor": "end", class: "dlabel" }, g);
+    el("path", { d: `M${bx},${y + 4} h${w - 4} q4,0 4,4 v${16 - 8} q0,4 -4,4 h${-(w - 4)} z`, fill: css(color) }, g);
+    txt("text", fmtInt(r.value), { x: bx + w + 6, y: y + 15, class: "dlabel" }, g);
+    el("rect", { x: 0, y, width: W, height: rowH, fill: "transparent" }, g);
+    const on = e => { g.style.opacity = 0.8; showTip(e, r.label, [{ name: r.sub || "", value: fmtInt(r.value) }]); };
+    g.addEventListener("pointermove", on); g.addEventListener("pointerleave", () => { g.style.opacity = 1; hideTip(); });
+  });
+}
+function heatmap() {
+  const host = $("chHeat"); host.replaceChildren();
+  const W = Math.max(320, host.clientWidth), l = 36, cw = (W - l - 4) / 24, ch = 22, h = 7 * ch + 22;
+  const svg = el("svg", { viewBox: `0 0 ${W} ${h}`, height: h, role: "img", "aria-label": "Heatmap of service requests by weekday and hour" }, host);
+  const max = Math.max(...heatVals.flat()), steps = ["--seq-0", "--seq-1", "--seq-2", "--seq-3", "--seq-4", "--seq-5"];
+  const bucket = v => Math.min(5, Math.floor(v / max * 5.999));
+  const ax = el("g", { class: "axis" }, svg);
+  heatVals.forEach((row, d) => {
+    txt("text", D.heatmap.weekdays[d], { x: l - 6, y: d * ch + ch / 2 + 4, "text-anchor": "end" }, ax);
+    row.forEach((v, hr) => {
+      const r = el("rect", { x: l + hr * cw + 1, y: d * ch + 1, width: cw - 2, height: ch - 2, rx: 3, fill: css(steps[bucket(v)]), tabindex: 0 }, svg);
+      const on = e => { r.setAttribute("stroke", css("--ink")); showTip(e, `${D.heatmap.weekdays[d]} ${String(hr).padStart(2, "0")}:00–${String(hr + 1).padStart(2, "0")}:00`, [{ name: "requests per hour, avg", value: v.toFixed(0) }]); };
+      r.addEventListener("pointermove", on); r.addEventListener("pointerleave", () => { r.removeAttribute("stroke"); hideTip(); });
+    });
+  });
+  for (let hr = 0; hr < 24; hr += 3) txt("text", String(hr).padStart(2, "0"), { x: l + hr * cw + cw / 2, y: 7 * ch + 16, "text-anchor": "middle" }, ax);
+  const K = $("heatKey"); K.replaceChildren();
+  steps.forEach((s, i) => { const sp = document.createElement("span"); const k = document.createElement("i"); k.className = "key-rect"; k.style.background = css(s); k.style.outline = "1px solid " + css("--ring");
+    const lo = Math.round(i / 6 * max), hi = Math.round((i + 1) / 6 * max); sp.append(k, document.createTextNode(`${lo}–${hi}`)); K.appendChild(sp); });
+}
+
+/* ---------- Erlang C ---------- */
+function erlangC(A, N) { if (N <= A) return 1; let b = 1; for (let k = 1; k <= N; k++) b = (A * b) / (k + A * b); return b / (1 - (A / N) * (1 - b)); }
+function agentsFor(callsPerHour, ahtSec, targetSec = 75, slTarget = 0.8) {
+  const A = callsPerHour * ahtSec / 3600; let N = Math.max(1, Math.ceil(A));
+  for (; N < A + 500; N++) { const c = erlangC(A, N), slv = 1 - c * Math.exp(-(N - A) * targetSec / ahtSec); if (slv >= slTarget) return { N, A, sl: slv, asa: c * ahtSec / (N - A) }; }
+  return { N, A, sl: NaN, asa: NaN };
+}
+function staffing() {
+  const i = +$("stMonth").value, calls = F.forecast[i], ym = F.months[i];
+  const [y, m] = ym.split("-").map(Number), days = new Date(y, m, 0).getDate();
+  const weekly = calls / days * 7, peakCalls = weekly * peakShare;
+  const aht = +$("stAht").value * 60, shr = +$("stShr").value / 100;
+  const r = agentsFor(peakCalls, aht), sched = Math.ceil(r.N / (1 - shr));
+  const out = $("stOut"); out.replaceChildren();
+  const mk = (label, value, sub) => { const d = document.createElement("div"); d.className = "tile"; const a = document.createElement("div"); a.className = "label"; a.textContent = label; const b = document.createElement("div"); b.className = "value"; b.textContent = value; d.append(a, b); if (sub) { const c = document.createElement("div"); c.className = "delta"; c.textContent = sub; d.appendChild(c); } out.appendChild(d); };
+  mk("Forecast calls in month", fmtInt(calls), monthLabel(ym));
+  mk("Peak-hour calls", fmtInt(peakCalls), `${fmtPct(peakShare)} of a week's demand`);
+  mk("Agents on phones, peak hour", fmtInt(r.N), `Workload ${r.A.toFixed(1)} Erlangs`);
+  mk("Agents to schedule", fmtInt(sched), `After ${fmtPct(shr, 0)} shrinkage`);
+  mk("Expected service level", fmtPct(r.sl), `Avg speed of answer ${Math.round(r.asa)}s`);
+}
+
+/* ---------- render ---------- */
+function renderAll() {
+  legend("legendMix", groups.map(g => ({ name: g, color: css(gColor[g]) })));
+  stackedMix();
+  legend("legendShare", ["Self-service", "Assisted digital", "In person"].map(g => ({ name: g, color: css(gColor[g]), line: true })));
+  const shareSeries = g => D.channel_groups[g].map((v, i) => v / total[i]);
+  const shareMax = Math.ceil(Math.max(...["Self-service", "Assisted digital", "In person"].flatMap(shareSeries)) / 0.05) * 0.05;
+  lineChart("chShare", { x: months, yFmt: v => (v * 100).toFixed(0) + "%", r: 44, max: shareMax, nTicks: Math.round(shareMax / 0.05),
+    series: ["Self-service", "Assisted digital", "In person"].map(g => ({ name: g, color: gColor[g], values: shareSeries(g), label: g === "Self-service" })) });
+
+  columns("chSL", { labels: sl.map(r => String(r.year)), values: sl.map(r => r.service_level), max: 1, labelAll: true, yFmt: v => (v * 100).toFixed(0) + "%",
+    colorOf: i => sl[i].service_level >= sl[i].target ? "--s1" : "--crit", tick: i => String(sl[i].year), target: 0.8, targetLabel: "Target 80%",
+    rows: i => [{ name: "service level", value: fmtPct(sl[i].service_level) }, { name: sl[i].service_level >= sl[i].target ? "✓ met target" : "✕ missed target", value: "" }] });
+  const fuMax = Math.ceil(Math.max(...fu.map(r => r.follow_up_rate)) / 0.02) * 0.02;
+  columns("chFU", { labels: fu.map(r => r.quarter_key), values: fu.map(r => r.follow_up_rate), max: fuMax, nTicks: Math.round(fuMax / 0.02), yFmt: (v, lbl) => (v * 100).toFixed(lbl ? 1 : 0) + "%",
+    labelIdx: [fu.indexOf(fuMaxQ)], tick: i => fu[i].quarter_key.endsWith("Q1") ? fu[i].quarter_key.slice(0, 4) : "",
+    rows: i => [{ name: "follow-up rate", value: fmtPct(fu[i].follow_up_rate) }, { name: "status inquiries", value: fmtInt(fu[i].status_inquiries) }, { name: "all contacts", value: fmtInt(fu[i].contacts) }] });
+
+  $("fcSub").textContent = `Backtest on ${F.backtest.holdout}: ${fmtPct(F.backtest.mape_holt_winters)} mean absolute % error, vs ${fmtPct(F.backtest.mape_seasonal_naive)} for a same-month-last-year baseline.`;
+  lineChart("chFC", { x: F.months, yFmt: fmtK, h: 280, series: [
+    { name: "Actual", color: "--s1", values: F.actual, dy: -6 },
+    { name: "Forecast", color: "--s1", values: F.forecast, lo: F.lo80, hi: F.hi80, dash: true } ] });
+
+  $("heatSub").textContent = `Average requests created per hour, ${months[0].slice(0, 4)}–${months[n - 1].slice(0, 4)}. Peak: ${D.heatmap.weekdays[peak.d]} ${String(peak.h).padStart(2, "0")}:00. The key below gives each color's range.`;
+  heatmap();
+  $("giTitle").textContent = `Top general inquiries, ${D.top_inquiries_latest.period}`;
+  hbars("chGI", gi.map(r => ({ label: r.topic, value: r.inquiries, sub: "inquiries" })), "--s1");
+  hbars("chSR", D.top_sr_types.slice(0, 10).map(r => ({ label: r.sr_type, value: r.requests, sub: r.division })), "--s1");
+}
+
+function tables() {
+  table("tblMix", ["Month", ...groups, "Total"], months.map((m, i) => [m, ...groups.map(g => fmtInt(D.channel_groups[g][i])), fmtInt(total[i])]), [1, 2, 3, 4, 5]);
+  table("tblShare", ["Month", ...groups], months.map((m, i) => [m, ...groups.map(g => fmtPct(D.channel_groups[g][i] / total[i]))]), [1, 2, 3, 4]);
+  table("tblSL", ["Year", "Service level", "Target", "Status"], sl.map(r => [r.year, fmtPct(r.service_level), fmtPct(r.target, 0), r.service_level >= r.target ? "✓ Met" : "✕ Missed"]), [1, 2]);
+  table("tblFU", ["Quarter", "Status inquiries", "All contacts", "Follow-up rate"], fu.map(r => [r.quarter_key, fmtInt(r.status_inquiries), fmtInt(r.contacts), fmtPct(r.follow_up_rate)]), [1, 2, 3]);
+  table("tblFC", ["Month", "Actual", "Forecast", "80% low", "80% high"], F.months.map((m, i) => [m, F.actual[i] == null ? "" : fmtInt(F.actual[i]), F.forecast[i] == null ? "" : fmtInt(F.forecast[i]), F.lo80[i] == null ? "" : fmtInt(F.lo80[i]), F.hi80[i] == null ? "" : fmtInt(F.hi80[i])]), [1, 2, 3, 4]);
+  table("tblHeat", ["Day", ...D.heatmap.hours.map(h => String(h).padStart(2, "0"))], heatVals.map((r, d) => [D.heatmap.weekdays[d], ...r.map(v => v.toFixed(0))]), D.heatmap.hours.map(h => h + 1));
+  table("tblGI", ["Topic", "Inquiries"], gi.map(r => [r.topic, fmtInt(r.inquiries)]), [1]);
+  table("tblSR", ["Request type", "Division", "Requests"], D.top_sr_types.slice(0, 10).map(r => [r.sr_type, r.division, fmtInt(r.requests)]), [2]);
+  table("tblDict", ["KPI", "Definition", "Grain"], [
+    ["Contacts", "Interactions with 311 across all channels (phone, email, chat, social, web, mobile, counter, fax).", "Month × channel"],
+    ["Phone share", "Phone contacts ÷ all contacts.", "Month"],
+    ["Self-service share", "Web + mobile contacts ÷ all contacts.", "Month"],
+    ["Service level", "Share of phone calls answered within 75 seconds; target 80%.", "Year"],
+    ["Follow-up contact rate", "Status inquiries about an existing request ÷ all contacts. A proxy for failure demand.", "Quarter"],
+    ["Service requests", "Requests created in a City work-management system, by type, division, ward and status.", "Month (hourly for demand shape)"],
+    ["Forecast phone contacts", "Damped additive-trend, multiplicative-seasonal Holt-Winters, refit monthly; 80% interval from residual spread.", "Month"],
+    ["Agents required", "Erlang C minimum agents meeting 80/75 at the peak hour; handle time and shrinkage are user inputs.", "Peak hour"]]);
+  table("tblDQ", ["Check", "Result", "Detail"], D.data_quality.map(r => [r.check, (r.result === "PASS" ? "✓ " : "⚠ ") + r.result, r.detail]));
+}
+
+$("stNote").textContent = `The peak-hour share of weekly demand (${D.heatmap.weekdays[peak.d]} ${String(peak.h).padStart(2, "0")}:00, ${fmtPct(peakShare)} of the week) comes from service-request timestamps, used as a proxy for the phone arrival pattern. Shrinkage covers breaks, training and absence.`;
+const months12 = fIdx.map(i => [i, F.months[i]]);
+for (const [i, m] of months12) { const o = document.createElement("option"); o.value = i; o.textContent = monthLabel(m); $("stMonth").appendChild(o); }
+const peakIdx = fIdx.reduce((a, i) => F.forecast[i] > F.forecast[a] ? i : a, fIdx[0]); $("stMonth").value = peakIdx;
+["stMonth", "stAht", "stShr"].forEach(id => $(id).addEventListener("input", staffing));
+
+{ const ft = $("footer"); ft.textContent = `Source: ${D.source}. Pipeline, star-schema model, Power BI measures and tests: `;
+  const a = document.createElement("a"); a.href = "https://github.com/klovelace/contact-center-bi"; a.textContent = "github.com/klovelace/contact-center-bi";
+  ft.append(a, document.createTextNode(". Built by Kraemer Lovelace.")); }
+$("themeBtn").addEventListener("click", () => { const r = document.documentElement; const dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; r.dataset.theme = dark ? "light" : "dark"; renderAll(); staffing(); });
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { renderAll(); staffing(); });
+let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(renderAll, 120); });
+tables(); renderAll(); staffing();
+</script>
+</body>
+</html>

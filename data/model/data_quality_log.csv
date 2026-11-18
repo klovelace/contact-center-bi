@@ -1,0 +1,25 @@
+check,result,detail
+SR 2022 header,PASS,9 columns
+SR 2022 unquoted-comma repair,PASS,"35,576 rows had a comma inside the division name; re-joined"
+SR 2022 malformed rows,PASS,"5 rows rejected of 442,950 (0.001%)"
+SR 2023 header,PASS,9 columns
+SR 2023 unquoted-comma repair,PASS,"28,298 rows had a comma inside the division name; re-joined"
+SR 2023 malformed rows,PASS,"9 rows rejected of 414,282 (0.002%)"
+SR 2024 header,PASS,9 columns
+SR 2024 unquoted-comma repair,PASS,"34,203 rows had a comma inside the division name; re-joined"
+SR 2024 malformed rows,PASS,"16 rows rejected of 437,043 (0.004%)"
+SR 2025 header,PASS,9 columns
+SR 2025 unquoted-comma repair,PASS,"36,174 rows had a comma inside the division name; re-joined"
+SR 2025 malformed rows,PASS,"15 rows rejected of 500,269 (0.003%)"
+SR 2026 header,PASS,9 columns
+SR 2026 unquoted-comma repair,PASS,"40,580 rows had a comma inside the division name; re-joined"
+SR 2026 malformed rows,PASS,"20 rows rejected of 469,724 (0.004%)"
+SR creation timestamp parses,PASS,0 unparseable timestamps
+SR exact duplicate rows,PASS,"2,519 exact duplicates (0.11%); kept, since identical timestamps+type can be distinct requests"
+SR ward populated,PASS,0.00% of rows have no ward
+Channel name variants normalised,PASS,3 rows renamed: {'Counter visits': 'Counter Visits'}
+Channel taxonomy covers all channels,PASS,10 channels mapped
+Contact volume months complete,PASS,57 of 57 months present (Jan 2022 to Sep 2026)
+Channel 'Counter Visits' monthly outliers,FLAG,"2 months above 3x median (Feb 2022, Mar 2022); kept as reported, review with source owner"
+SR rows reconcile to model,PASS,"2,264,203 requests in source = 2,264,203 in fact table"
+Forecast beats seasonal-naive on holdout,PASS,MAPE 8.8% vs 12.4% (Oct 2025 to Sep 2026)

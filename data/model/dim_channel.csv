@@ -1,0 +1,11 @@
+channel,channel_group,is_digital
+Counter Visits,In person,False
+Email,Assisted digital,True
+Facility Booking,Assisted (other),False
+Fax,Assisted (other),False
+Live Chat,Assisted digital,True
+Mail,Assisted (other),False
+Mobile,Self-service,True
+Phone,Agent voice,False
+Twitter,Assisted digital,True
+Web,Self-service,True

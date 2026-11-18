@@ -1,0 +1,967 @@
+sr_type_key,sr_type,division,section
+1,Accessibility / Disability - Complaint - 311 Toronto,311,Operations
+2,Accessibility Complaint,311,Operations
+3,Comment - 311 Toronto,311,Operations
+4,Comment / Suggestion,311,Operations
+5,Graffiti on Hydro Asset,311,Operations
+6,Lead Water Testing Kit Registration,311,Operations
+7,Power Outage,311,Operations
+8,Publication Request - Solid Waste,311,Operations
+9,Publication Request - Transportation,311,Operations
+10,Registration - Toronto Water,311,Operations
+11,Staff Service - Complaint - 311 Toronto,311,Operations
+12,Staff Service - Compliment - 311 Toronto,311,Operations
+13,Staff Service Complaint,311,Operations
+14,Staff Service Compliment,311,Operations
+15,Street Light Out,311,Operations
+16,Bees/Wasp,"Environment, Climate & Forestry",Forestry Operations
+17,Commercial Tree - Emergency Clean-up,"Environment, Climate & Forestry",Forestry Operations
+18,Commercial Tree Maint Req,"Environment, Climate & Forestry",Forestry Operations
+19,Commercial Tree Planting,"Environment, Climate & Forestry",Forestry Operations
+20,Commercial Tree Pruning,"Environment, Climate & Forestry",Forestry Operations
+21,Commercial Tree Removal,"Environment, Climate & Forestry",Forestry Operations
+22,General Pruning,"Environment, Climate & Forestry",Forestry Operations
+23,General Tree Maintenance,"Environment, Climate & Forestry",Forestry Operations
+24,Mulching,"Environment, Climate & Forestry",Forestry Operations
+25,New Tree Planting,"Environment, Climate & Forestry",Forestry Operations
+26,Pit Cover/Paver Maintenance,"Environment, Climate & Forestry",Forestry Operations
+27,Residential or Park Tree Removal,"Environment, Climate & Forestry",Forestry Operations
+28,Stump Removal,"Environment, Climate & Forestry",Forestry Operations
+29,Tree Brush Pick-up,"Environment, Climate & Forestry",Forestry Operations
+30,Tree Emergency Clean-Up,"Environment, Climate & Forestry",Forestry Operations
+31,Tree Planting,"Environment, Climate & Forestry",Forestry Operations
+32,Integrated Pest Management Inspection,"Environment, Climate & Forestry",Forestry and Natural Environment Management
+33,Natural Area Maintenance,"Environment, Climate & Forestry",Forestry and Natural Environment Management
+34,Planting 11 Plus Trees,"Environment, Climate & Forestry",Forestry and Natural Environment Management
+35,Spongy Moth Control Insp,"Environment, Climate & Forestry",Forestry and Natural Environment Management
+36,Dangerous Private Tree Investigation,"Environment, Climate & Forestry",Tree Protection and Plan Review
+37,RNFP Request for Letter of Clearance,"Environment, Climate & Forestry",Tree Protection and Plan Review
+38,RNFP Request to Refund Guarantee Deposit,"Environment, Climate & Forestry",Tree Protection and Plan Review
+39,RNFP Request to Withdraw Permit Application,"Environment, Climate & Forestry",Tree Protection and Plan Review
+40,TPPR Request for Letter of Clearance,"Environment, Climate & Forestry",Tree Protection and Plan Review
+41,TPPR Request to Refund Guarantee Deposit,"Environment, Climate & Forestry",Tree Protection and Plan Review
+42,TPPR Request to Withdraw Permit Application,"Environment, Climate & Forestry",Tree Protection and Plan Review
+43,Unauthorized Tree Injury or Removal,"Environment, Climate & Forestry",Tree Protection and Plan Review
+44,Business Complaint,Municipal Licensing & Standards,Business Licensing Enforcement
+45,COVID Business Complaint,Municipal Licensing & Standards,Business Licensing Enforcement
+46,Private Transportation Company Complaint,Municipal Licensing & Standards,Business Licensing Enforcement
+47,Public Spaces Complaint,Municipal Licensing & Standards,Business Licensing Enforcement
+48,Taxi|| Limo Complaint,Municipal Licensing & Standards,Business Licensing Enforcement
+49,Tow Truck Complaint,Municipal Licensing & Standards,Business Licensing Enforcement
+50,Trades Complaint,Municipal Licensing & Standards,Business Licensing Enforcement
+51,Amplified Sound,Municipal Licensing & Standards,Bylaw Enforcement
+52,Amplified Sound or Instrument Sound,Municipal Licensing & Standards,Bylaw Enforcement
+53,Amplified or Musical Instrument Noise,Municipal Licensing & Standards,Bylaw Enforcement
+54,Construction Noise,Municipal Licensing & Standards,Bylaw Enforcement
+55,Loading and Unloading Noise,Municipal Licensing & Standards,Bylaw Enforcement
+56,Motor Vehicle Noise,Municipal Licensing & Standards,Bylaw Enforcement
+57,Moving Motor Vehicle Noise,Municipal Licensing & Standards,Bylaw Enforcement
+58,Permitted or Exempted Noise,Municipal Licensing & Standards,Bylaw Enforcement
+59,Power Device Noise,Municipal Licensing & Standards,Bylaw Enforcement
+60,Stationary Motor Vehicle Noise,Municipal Licensing & Standards,Bylaw Enforcement
+61,Stationary Source Noise,Municipal Licensing & Standards,Bylaw Enforcement
+62,Stationary Source and Residential Air Conditioner Noise,Municipal Licensing & Standards,Bylaw Enforcement
+63,Unreasonable and Persistent Noise,Municipal Licensing & Standards,Bylaw Enforcement
+64,Feeding Wildlife on Private and Public Property,Municipal Licensing & Standards,District Enforcement
+65,Adequate Heat,Municipal Licensing & Standards,Investigation Services
+66,Air Conditioning in a Rental Unit,Municipal Licensing & Standards,Investigation Services
+67,Appliance (Emergency),Municipal Licensing & Standards,Investigation Services
+68,Election Signs,Municipal Licensing & Standards,Investigation Services
+69,Excessive Heat in a Rental Building Shared Space,Municipal Licensing & Standards,Investigation Services
+70,Excessive Heat in a Rental Unit,Municipal Licensing & Standards,Investigation Services
+71,Fence,Municipal Licensing & Standards,Investigation Services
+72,Graffiti,Municipal Licensing & Standards,Investigation Services
+73,Graffiti on Private Property,Municipal Licensing & Standards,Investigation Services
+74,Illegally Dumped Appliance with Doors On (Emergency),Municipal Licensing & Standards,Investigation Services
+75,Long Grass and Prohibited Plants on Private Property,Municipal Licensing & Standards,Investigation Services
+76,Long Grass and Weeds,Municipal Licensing & Standards,Investigation Services
+77,Multi-Tenant Houses Licensing and Violations,Municipal Licensing & Standards,Investigation Services
+78,Noise,Municipal Licensing & Standards,Investigation Services
+79,Property Standards,Municipal Licensing & Standards,Investigation Services
+80,Property Standards and Maintenance Violations,Municipal Licensing & Standards,Investigation Services
+81,Right of Entry,Municipal Licensing & Standards,Investigation Services
+82,Rooming House,Municipal Licensing & Standards,Investigation Services
+83,Signs,Municipal Licensing & Standards,Investigation Services
+84,Waste,Municipal Licensing & Standards,Investigation Services
+85,Waste or Illegal Dumping on Private Property,Municipal Licensing & Standards,Investigation Services
+86,Zoning,Municipal Licensing & Standards,Investigation Services
+87,Zoning Regulations Violations,Municipal Licensing & Standards,Investigation Services
+88,Non-compliance - Single-Use/Takeaway Items,Municipal Licensing & Standards,Licensing Team
+89,Coyote Sighting,Municipal Licensing & Standards,Municipal Licensing & Standards - N/A
+90,Animals,Municipal Licensing & Standards,Parks Enforcement
+91,Commercial Dog Walkers,Municipal Licensing & Standards,Parks Enforcement
+92,Commercial Enterprises,Municipal Licensing & Standards,Parks Enforcement
+93,Conduct,Municipal Licensing & Standards,Parks Enforcement
+94,Damage or Removal of Plants in City Parks,Municipal Licensing & Standards,Parks Enforcement
+95,Disturbing/Injuring/Feeding Wildlife in a City Park,Municipal Licensing & Standards,Parks Enforcement
+96,Dog Off-Leash in a City Park,Municipal Licensing & Standards,Parks Enforcement
+97,Dogs off Leash,Municipal Licensing & Standards,Parks Enforcement
+98,Encroachments,Municipal Licensing & Standards,Parks Enforcement
+99,Fireworks,Municipal Licensing & Standards,Parks Enforcement
+100,Games,Municipal Licensing & Standards,Parks Enforcement
+101,Illegal Dumping in City Parks,Municipal Licensing & Standards,Parks Enforcement
+102,Illegal Dumping in Park,Municipal Licensing & Standards,Parks Enforcement
+103,Park Conduct,Municipal Licensing & Standards,Parks Enforcement
+104,Park Use,Municipal Licensing & Standards,Parks Enforcement
+105,Stoop N Scoop,Municipal Licensing & Standards,Parks Enforcement
+106,Stoop and Scoop,Municipal Licensing & Standards,Parks Enforcement
+107,Trees and Plants,Municipal Licensing & Standards,Parks Enforcement
+108,Vehicles,Municipal Licensing & Standards,Parks Enforcement
+109,Watercraft,Municipal Licensing & Standards,Parks Enforcement
+110,Animal Noise,Municipal Licensing & Standards,Toronto Animal Services
+111,Animal Noise - Retired,Municipal Licensing & Standards,Toronto Animal Services
+112,Animal on Short Tether,Municipal Licensing & Standards,Toronto Animal Services
+113,Cadaver - Domestic,Municipal Licensing & Standards,Toronto Animal Services
+114,Cadaver - Wildlife,Municipal Licensing & Standards,Toronto Animal Services
+115,Coyote Dangerous to Public Safety,Municipal Licensing & Standards,Toronto Animal Services
+116,Coyote Response - Animal Attack,Municipal Licensing & Standards,Toronto Animal Services
+117,Coyote Response - Animal Bite,Municipal Licensing & Standards,Toronto Animal Services
+118,Coyote Response - Danger to Public Safety,Municipal Licensing & Standards,Toronto Animal Services
+119,Coyote Response - Human Attack,Municipal Licensing & Standards,Toronto Animal Services
+120,Coyote Response - Human Bite,Municipal Licensing & Standards,Toronto Animal Services
+121,Dangerous Dog Complaint,Municipal Licensing & Standards,Toronto Animal Services
+122,Dog Harassing/Chasing Coyote,Municipal Licensing & Standards,Toronto Animal Services
+123,Dog Off-Leash,Municipal Licensing & Standards,Toronto Animal Services
+124,Dog Off-Leash on School Property,Municipal Licensing & Standards,Toronto Animal Services
+125,Injured - Domestic,Municipal Licensing & Standards,Toronto Animal Services
+126,Injured - Wildlife,Municipal Licensing & Standards,Toronto Animal Services
+127,Investigate - Animal Care,Municipal Licensing & Standards,Toronto Animal Services
+128,Investigate - Animal Extreme Condition,Municipal Licensing & Standards,Toronto Animal Services
+129,Investigate - Animal to Animal Bite,Municipal Licensing & Standards,Toronto Animal Services
+130,Investigate - Animal to Human Bite,Municipal Licensing & Standards,Toronto Animal Services
+131,Investigate - Attack to Animal,Municipal Licensing & Standards,Toronto Animal Services
+132,Investigate - Attack to Human,Municipal Licensing & Standards,Toronto Animal Services
+133,Investigate - Dangerous Dog with no Dangerous Dog Tag,Municipal Licensing & Standards,Toronto Animal Services
+134,Investigate - Dangerous Dog with no Warning Sign Displayed,Municipal Licensing & Standards,Toronto Animal Services
+135,Investigate - Dog Excrement,Municipal Licensing & Standards,Toronto Animal Services
+136,Investigate - Dog Frequently At Large,Municipal Licensing & Standards,Toronto Animal Services
+137,Investigate - Licence,Municipal Licensing & Standards,Toronto Animal Services
+138,Investigate - Menace,Municipal Licensing & Standards,Toronto Animal Services
+139,Investigate - Muzzle,Municipal Licensing & Standards,Toronto Animal Services
+140,Investigate - No Leash,Municipal Licensing & Standards,Toronto Animal Services
+141,Investigate - Noise,Municipal Licensing & Standards,Toronto Animal Services
+142,Investigate - Nuisance Cat,Municipal Licensing & Standards,Toronto Animal Services
+143,Investigate - Pigeons,Municipal Licensing & Standards,Toronto Animal Services
+144,Investigate - Pit Bull,Municipal Licensing & Standards,Toronto Animal Services
+145,Investigate - Prohibited Animal,Municipal Licensing & Standards,Toronto Animal Services
+146,Investigate - Prohibited Collar,Municipal Licensing & Standards,Toronto Animal Services
+147,Investigate - Shelter,Municipal Licensing & Standards,Toronto Animal Services
+148,Investigate - Tether,Municipal Licensing & Standards,Toronto Animal Services
+149,Investigate - Tied Excessive Time,Municipal Licensing & Standards,Toronto Animal Services
+150,Investigate - Tied Prohibited Collar,Municipal Licensing & Standards,Toronto Animal Services
+151,Investigate - Too Many,Municipal Licensing & Standards,Toronto Animal Services
+152,Investigate - Too Many Animals,Municipal Licensing & Standards,Toronto Animal Services
+153,Investigate - Unsanitary Conditions,Municipal Licensing & Standards,Toronto Animal Services
+154,Investigate - Walking Too Many,Municipal Licensing & Standards,Toronto Animal Services
+155,Investigate - Walking Too Many Dogs,Municipal Licensing & Standards,Toronto Animal Services
+156,Owner Surr Deceased,Municipal Licensing & Standards,Toronto Animal Services
+157,Owner Surr Live,Municipal Licensing & Standards,Toronto Animal Services
+158,Owner Surrender - Deceased,Municipal Licensing & Standards,Toronto Animal Services
+159,Owner Surrender - Live,Municipal Licensing & Standards,Toronto Animal Services
+160,Pick up Dead Domestic Animals,Municipal Licensing & Standards,Toronto Animal Services
+161,Pick up Dead Wildlife,Municipal Licensing & Standards,Toronto Animal Services
+162,Protective Custody,Municipal Licensing & Standards,Toronto Animal Services
+163,Rabies Suspect,Municipal Licensing & Standards,Toronto Animal Services
+164,Service - Protective Custody,Municipal Licensing & Standards,Toronto Animal Services
+165,Service/Staff - Complaint - Toronto Animal Services,Municipal Licensing & Standards,Toronto Animal Services
+166,Service/Staff - Compliment - Toronto Animal Services,Municipal Licensing & Standards,Toronto Animal Services
+167,Service/Staff Comment - Toronto Animal Services,Municipal Licensing & Standards,Toronto Animal Services
+168,Services - Education Request,Municipal Licensing & Standards,Toronto Animal Services
+169,Services - Found Animal Report,Municipal Licensing & Standards,Toronto Animal Services
+170,Services - Lost Animal Report,Municipal Licensing & Standards,Toronto Animal Services
+171,Services - Protective Custody,Municipal Licensing & Standards,Toronto Animal Services
+172,Services - Rabies Suspect,Municipal Licensing & Standards,Toronto Animal Services
+173,Services - Wildlife Education,Municipal Licensing & Standards,Toronto Animal Services
+174,Services Wild Educ,Municipal Licensing & Standards,Toronto Animal Services
+175,Stray - At Large,Municipal Licensing & Standards,Toronto Animal Services
+176,Stray - Attack,Municipal Licensing & Standards,Toronto Animal Services
+177,Stray - Confined,Municipal Licensing & Standards,Toronto Animal Services
+178,Stray - Menace,Municipal Licensing & Standards,Toronto Animal Services
+179,TAS Comment / Suggestion,Municipal Licensing & Standards,Toronto Animal Services
+180,TAS Staff / Service Complaint,Municipal Licensing & Standards,Toronto Animal Services
+181,TAS Staff / Service Compliment,Municipal Licensing & Standards,Toronto Animal Services
+182,Containers,Municipal Licensing & Standards,Waste Enforcement
+183,Contaminated Waste / Preparation,Municipal Licensing & Standards,Waste Enforcement
+184,Contaminated Waste/Preparation,Municipal Licensing & Standards,Waste Enforcement
+185,Illegal Dumping,Municipal Licensing & Standards,Waste Enforcement
+186,Illegal Dumping on City Property,Municipal Licensing & Standards,Waste Enforcement
+187,Postering City Property / Structures,Municipal Licensing & Standards,Waste Enforcement
+188,Postering City Property/Structures,Municipal Licensing & Standards,Waste Enforcement
+189,Postering Kiosks,Municipal Licensing & Standards,Waste Enforcement
+190,Prohibited Acts / Pollicking,Municipal Licensing & Standards,Waste Enforcement
+191,Prohibited Acts/Pollicking,Municipal Licensing & Standards,Waste Enforcement
+192,Prohibited Waste,Municipal Licensing & Standards,Waste Enforcement
+193,Waste Set Out - Wrong Location / Time/ Day,Municipal Licensing & Standards,Waste Enforcement
+194,Waste Storage,Municipal Licensing & Standards,Waste Enforcement
+195,Waste Storage on a Multi-residential / Commercial Property,Municipal Licensing & Standards,Waste Enforcement
+196,Wrong Location/Time/Day,Municipal Licensing & Standards,Waste Enforcement
+197,Beach Sand Maintenance,Parks and Recreation,Parks
+198,Dangerous or Trapped Wildlife in a Park,Parks and Recreation,Parks
+199,Dead Animal in a Park,Parks and Recreation,Parks
+200,Dead Wildlife in a Park,Parks and Recreation,Parks
+201,Grass and Sports Field Maintenance in Parks,Parks and Recreation,Parks
+202,Investigate Unauthorized Use of Permitted Park Facility,Parks and Recreation,Parks
+203,Ornamental Plant Maintenance in Parks,Parks and Recreation,Parks
+204,Park Community Garden Maintenance,Parks and Recreation,Parks
+205,Park Dog Off-leash Area Maintenance,Parks and Recreation,Parks
+206,Park Dog Off-leash Area Repair Request,Parks and Recreation,Parks
+207,Park Farm Animal Wellbeing,Parks and Recreation,Parks
+208,Park General Maintenance,Parks and Recreation,Parks
+209,Park Graffiti Removal,Parks and Recreation,Parks
+210,Park Hazardous Plants and Weeds,Parks and Recreation,Parks
+211,Park Lighting Maintenance,Parks and Recreation,Parks
+212,Park Litter and Garbage,Parks and Recreation,Parks
+213,Park Outdoor Rink and Skate Trail Maintenance,Parks and Recreation,Parks
+214,Park Pathways and Trails Maintenance,Parks and Recreation,Parks
+215,Park Playground Repairs,Parks and Recreation,Parks
+216,Park Property Snow and Ice Clearing,Parks and Recreation,Parks
+217,Park Seating Repairs,Parks and Recreation,Parks
+218,Park Sign Maintenance,Parks and Recreation,Parks
+219,Park Stadium Maintenance,Parks and Recreation,Parks
+220,Park Washroom Maintenance,Parks and Recreation,Parks
+221,Park Washroom Repairs,Parks and Recreation,Parks
+222,Park Water Feature Repairs,Parks and Recreation,Parks
+223,River and Ravine Dumping,Parks and Recreation,Parks
+224,Suggestions about Signs in Parks,Parks and Recreation,Parks
+225,Other Recreation Facility Issues,Parks and Recreation,Recreation
+226,Recreation Accessibility Issues,Parks and Recreation,Recreation
+227,Recreation Arena Equipment Issue,Parks and Recreation,Recreation
+228,Recreation Building Fixture Repair,Parks and Recreation,Recreation
+229,Recreation Centre Fitness Equipment Issue,Parks and Recreation,Recreation
+230,Recreation Centre Garbage/Recycling Removal,Parks and Recreation,Recreation
+231,Recreation Cleaning and Tidiness,Parks and Recreation,Recreation
+232,Recreation Facility Graffiti,Parks and Recreation,Recreation
+233,Recreation Facility Repair,Parks and Recreation,Recreation
+234,Recreation Heating and Cooling,Parks and Recreation,Recreation
+235,Recreation Lighting and Electrical,Parks and Recreation,Recreation
+236,Recreation Plumbing or Water Issue,Parks and Recreation,Recreation
+237,Recreation Pool Issues,Parks and Recreation,Recreation
+238,Recreation Sports Equipment Issue,Parks and Recreation,Recreation
+239,Recreation Washroom or Changeroom Cleanliness,Parks and Recreation,Recreation
+240,Bees/Wasp,"Parks, Forestry & Recreation",Forestry Operations
+241,Commercial Tree Maint Req,"Parks, Forestry & Recreation",Forestry Operations
+242,Commercial Tree Planting,"Parks, Forestry & Recreation",Forestry Operations
+243,Commercial Tree Pruning,"Parks, Forestry & Recreation",Forestry Operations
+244,Commercial Tree Removal,"Parks, Forestry & Recreation",Forestry Operations
+245,Commercial Tree Storm Clean Up,"Parks, Forestry & Recreation",Forestry Operations
+246,General Pruning,"Parks, Forestry & Recreation",Forestry Operations
+247,General Tree Inspection,"Parks, Forestry & Recreation",Forestry Operations
+248,General Tree Maintenance,"Parks, Forestry & Recreation",Forestry Operations
+249,Hydro - Brush Pick-up,"Parks, Forestry & Recreation",Forestry Operations
+250,Misc: Non-Forestry Activity,"Parks, Forestry & Recreation",Forestry Operations
+251,Mulching,"Parks, Forestry & Recreation",Forestry Operations
+252,Pit Cover/Paver Maintenance,"Parks, Forestry & Recreation",Forestry Operations
+253,Stemming,"Parks, Forestry & Recreation",Forestry Operations
+254,Storm Clean Up,"Parks, Forestry & Recreation",Forestry Operations
+255,Stumping,"Parks, Forestry & Recreation",Forestry Operations
+256,Tree Planting,"Parks, Forestry & Recreation",Forestry Operations
+257,Gypsy Moth Control Insp,"Parks, Forestry & Recreation",Forestry and Natural Environment Management
+258,IPM Inspection,"Parks, Forestry & Recreation",Forestry and Natural Environment Management
+259,Parks Ravine Safety Mtc FNEM,"Parks, Forestry & Recreation",Forestry and Natural Environment Management
+260,Planting 11 Plus Trees FNEM,"Parks, Forestry & Recreation",Forestry and Natural Environment Management
+261,Ravine Inspection,"Parks, Forestry & Recreation",Forestry and Natural Environment Management
+262,By-Law Contravention Invest,"Parks, Forestry & Recreation",Tree Protection and Plan Review
+263,Dangerous Private Tree Investigation,"Parks, Forestry & Recreation",Tree Protection and Plan Review
+264,EAB Exemption Request,"Parks, Forestry & Recreation",Tree Protection and Plan Review
+265,Permit Inspection,"Parks, Forestry & Recreation",Tree Protection and Plan Review
+266,Access/AODA Complaint,Solid Waste Management Services,Collections
+267,Accessibility / Disability - Complaint - Solid Waste Management,Solid Waste Management Services,Collections
+268,Additional Residential Organic Bin,Solid Waste Management Services,Collections
+269,All / Hazardous Waste / Not Picked Up,Solid Waste Management Services,Collections
+270,All / Hazardous Waste / Pick Up Request,Solid Waste Management Services,Collections
+271,Apartment Above Business - Garbage Night Collection - Not Picked Up,Solid Waste Management Services,Collections
+272,Apartment Above Business - Organic Night Collection - Not Picked Up,Solid Waste Management Services,Collections
+273,Apartment Above Business - Organic Night Collection - Not Picked Up.,Solid Waste Management Services,Collections
+274,Apartment Above Business - Yard Waste Night Collection - Not Picked Up,Solid Waste Management Services,Collections
+275,Application Mail Out / Non-Res,Solid Waste Management Services,Collections
+276,Application Mail Out / Premium Organics,Solid Waste Management Services,Collections
+277,Application Status,Solid Waste Management Services,Collections
+278,Application Status / Non-Res,Solid Waste Management Services,Collections
+279,Bike Removal and Lost Bike Inquiry,Solid Waste Management Services,Collections
+280,Bin Investigation Request,Solid Waste Management Services,Collections
+281,Bins - Complaint - Solid Waste Management,Solid Waste Management Services,Collections
+282,Clean up Illegal Dumping on City Road Allowance,Solid Waste Management Services,Collections
+283,Clean up Litter on Laneways,Solid Waste Management Services,Collections
+284,Clean up Litter on Sidewalks and Boulevards,Solid Waste Management Services,Collections
+285,Clean up Overflowing Street Litter Bin,Solid Waste Management Services,Collections
+286,Curb Day Collection - Complaint - Solid Waste Management,Solid Waste Management Services,Collections
+287,Curb Day Collection Staff - Complaint - Solid Waste Management,Solid Waste Management Services,Collections
+288,Dispute Recycling Contamination Notice,Solid Waste Management Services,Collections
+289,Dispute SR Status/Bins,Solid Waste Management Services,Collections
+290,Dispute SR Status/Collections Curb Day,Solid Waste Management Services,Collections
+291,Dispute SR Status/Collections FEL,Solid Waste Management Services,Collections
+292,Dispute SR Status/Collections Nights,Solid Waste Management Services,Collections
+293,Dispute SR Status/Litter Operations,Solid Waste Management Services,Collections
+294,Dispute SR Status/PRM,Solid Waste Management Services,Collections
+295,FEL Multi-Res / Recycle Cart / Not Picked Up,Solid Waste Management Services,Collections
+296,FEL Multi-Res Furniture / Not Picked Up,Solid Waste Management Services,Collections
+297,FEL Multi-Res Xmas Tree / Not Picked Up,Solid Waste Management Services,Collections
+298,FEL Multi-Res Yard Waste / Not Picked Up,Solid Waste Management Services,Collections
+299,FEL Non-Res / Garbage / Not Picked Up,Solid Waste Management Services,Collections
+300,FEL Non-Res Furniture / Not Picked Up,Solid Waste Management Services,Collections
+301,FEL Non-Res Organic / Not Picked Up,Solid Waste Management Services,Collections
+302,FEL Non-Res Organic Cart / Not Picked Up,Solid Waste Management Services,Collections
+303,FEL Non-Res Recycle Cart / Not Picked Up,Solid Waste Management Services,Collections
+304,FEL Non-Res Recycle FEL / Not Picked Up,Solid Waste Management Services,Collections
+305,FEL Non-Res Yard Waste / Not Picked Up,Solid Waste Management Services,Collections
+306,Front End Load Customer Property Damage,Solid Waste Management Services,Collections
+307,Front End Loaded Bin Spills Clean-up,Solid Waste Management Services,Collections
+308,Garbage / Park / Bin Damaged,Solid Waste Management Services,Collections
+309,Garbage / Park / Bin Graffiti on Bin,Solid Waste Management Services,Collections
+310,Garbage / Park / Bin Installation,Solid Waste Management Services,Collections
+311,Garbage / Park / Bin Missing,Solid Waste Management Services,Collections
+312,Garbage / Park / Bin Overflow,Solid Waste Management Services,Collections
+313,Garbage / Park / Bin Removal / Relocate,Solid Waste Management Services,Collections
+314,Hazardous Waste Not Picked Up,Solid Waste Management Services,Collections
+315,Hazardous Waste Pick-up,Solid Waste Management Services,Collections
+316,Large Apartment or Condo Building Collection - Complaint - Solid Waste Management,Solid Waste Management Services,Collections
+317,Large Apartment/Condo Building Collection Staff - Complaint - Solid Waste Management,Solid Waste Management Services,Collections
+318,Litter / Bike Removal Inquiry,Solid Waste Management Services,Collections
+319,Litter / Bin / Graffiti on Bin,Solid Waste Management Services,Collections
+320,Litter / Bin / Overflow or Not Picked Up,Solid Waste Management Services,Collections
+321,Litter / Bin / Reinstall|| Replace Missing,Solid Waste Management Services,Collections
+322,Litter / Bin / Relocate,Solid Waste Management Services,Collections
+323,Litter / Bin / Removal,Solid Waste Management Services,Collections
+324,Litter / Illegal Dumping Cleanup,Solid Waste Management Services,Collections
+325,Litter / Laneway / Clean Up,Solid Waste Management Services,Collections
+326,Litter / Sidewalk & Blvd / Pick Up Request,Solid Waste Management Services,Collections
+327,Litter / Special Event / Pick Up Request,Solid Waste Management Services,Collections
+328,Litter Operations - Complaint - Solid Waste Management,Solid Waste Management Services,Collections
+329,Litter Operations Staff - Complaint - Solid Waste Management,Solid Waste Management Services,Collections
+330,Multi-Res / Ewaste / Not Picked Up,Solid Waste Management Services,Collections
+331,Multi-Res / FEL / Bin Inventory,Solid Waste Management Services,Collections
+332,Multi-Res / Furniture Pile / Not Picked Up,Solid Waste Management Services,Collections
+333,Multi-Res / Garbage / Additional Container,Solid Waste Management Services,Collections
+334,Multi-Res / Garbage Cart / Not Picked Up,Solid Waste Management Services,Collections
+335,Multi-Res / Garbage Cont. / Missing Damaged,Solid Waste Management Services,Collections
+336,Multi-Res / Garbage Front-End / Not Picked Up,Solid Waste Management Services,Collections
+337,Multi-Res / Garbage Pile / Not Picked Up,Solid Waste Management Services,Collections
+338,Multi-Res / Garbage Rear-Bin / Not Picked Up,Solid Waste Management Services,Collections
+339,Multi-Res / Nite Furniture Pile / Not Picked Up,Solid Waste Management Services,Collections
+340,Multi-Res / Nite Garbage Pile / Not Picked Up,Solid Waste Management Services,Collections
+341,Multi-Res / Nite Garbage Rear-Bin / Not Picked Up,Solid Waste Management Services,Collections
+342,Multi-Res / Nite Recycle Cart / Not Picked Up,Solid Waste Management Services,Collections
+343,Multi-Res / Nite XMAS Tree / Not Picked Up,Solid Waste Management Services,Collections
+344,Multi-Res / Organic Bin / Additional,Solid Waste Management Services,Collections
+345,Multi-Res / Organic Bin / Damaged,Solid Waste Management Services,Collections
+346,Multi-Res / Organic Bin / Missing,Solid Waste Management Services,Collections
+347,Multi-Res / Organic Bin / Not Picked Up,Solid Waste Management Services,Collections
+348,Multi-Res / Organic Cart / Not Picked Up,Solid Waste Management Services,Collections
+349,Multi-Res / Organic FEL / Not Picked Up,Solid Waste Management Services,Collections
+350,Multi-Res / Recycle / Additional Container,Solid Waste Management Services,Collections
+351,Multi-Res / Recycle Cart / Not Picked Up,Solid Waste Management Services,Collections
+352,Multi-Res / Recycle Cont. / Missing Damaged,Solid Waste Management Services,Collections
+353,Multi-Res / Recycle Front-End / Not Picked Up,Solid Waste Management Services,Collections
+354,Multi-Res / Recycle Rear-Bin / Not Picked Up,Solid Waste Management Services,Collections
+355,Multi-Res / XMAS Tree / Not Picked Up,Solid Waste Management Services,Collections
+356,Multi-Res / XMAS Tree / Pick Up,Solid Waste Management Services,Collections
+357,Multi-Res / Yard Waste / Not Picked Up,Solid Waste Management Services,Collections
+358,Multi-Residential - Furniture Pile Night Collection - Not Picked Up,Solid Waste Management Services,Collections
+359,Multi-Residential - Garbage Pile Night Collection - Not Picked Up,Solid Waste Management Services,Collections
+360,Multi-Residential Christmas Tree Not Picked Up,Solid Waste Management Services,Collections
+361,Multi-Residential Christmas Tree Pick Up,Solid Waste Management Services,Collections
+362,Multi-Residential Electronic Waste Not Picked Up,Solid Waste Management Services,Collections
+363,Multi-Residential Front End Loaded Christmas Tree Not Picked Up,Solid Waste Management Services,Collections
+364,Multi-residential Front End Loaded Bin Inventory,Solid Waste Management Services,Collections
+365,Multi-residential Front End Loaded Garbage Not Picked Up,Solid Waste Management Services,Collections
+366,Multi-residential Front End Loaded Oversized Items Not Picked Up,Solid Waste Management Services,Collections
+367,Multi-residential Front End Loaded Recycling Cart Not Picked Up,Solid Waste Management Services,Collections
+368,Multi-residential Front End Loaded Yard Waste Not Picked up,Solid Waste Management Services,Collections
+369,Multi-residential Front-end Loaded Organics Not Picked Up,Solid Waste Management Services,Collections
+370,Multi-residential Garbage Cart Not Picked Up,Solid Waste Management Services,Collections
+371,Multi-residential Garbage Pile Not Picked Up,Solid Waste Management Services,Collections
+372,Multi-residential Organic Bin Damaged,Solid Waste Management Services,Collections
+373,Multi-residential Organic Bin Not Picked Up,Solid Waste Management Services,Collections
+374,Multi-residential Organic Cart Not Picked Up,Solid Waste Management Services,Collections
+375,Multi-residential Oversized Items Not Picked Up,Solid Waste Management Services,Collections
+376,Multi-residential Oversized Itmes Not Picked Up,Solid Waste Management Services,Collections
+377,Multi-residential Yard Waste Not Picked Up,Solid Waste Management Services,Collections
+378,Multiple SRs/Collections Curb Day,Solid Waste Management Services,Collections
+379,Multiple SRs/Collections FEL,Solid Waste Management Services,Collections
+380,Multiple SRs/Collections Nights,Solid Waste Management Services,Collections
+381,Multiple SRs/Litter Operations,Solid Waste Management Services,Collections
+382,Night Collection - Complaint - Solid Waste Management,Solid Waste Management Services,Collections
+383,Night Collection Staff - Complaint - Solid Waste Management,Solid Waste Management Services,Collections
+384,Non Qualifying Service Request,Solid Waste Management Services,Collections
+385,Non-Collections Staff - Complaint - Solid Waste Management,Solid Waste Management Services,Collections
+386,Non-Res Cardboard Nite / Not Picked Up,Solid Waste Management Services,Collections
+387,Non-Res Furniture / Not Picked Up,Solid Waste Management Services,Collections
+388,Non-Res Furniture / Not Picked Up Night,Solid Waste Management Services,Collections
+389,Non-Res Garbage Bag / Not Picked Up,Solid Waste Management Services,Collections
+390,Non-Res Garbage Bag Nite / Not Picked Up,Solid Waste Management Services,Collections
+391,Non-Res Garbage Bin / Not Picked Up,Solid Waste Management Services,Collections
+392,Non-Res Garbage Bin Nite / Not Picked Up,Solid Waste Management Services,Collections
+393,Non-Res Organic Bin / Not Picked Up,Solid Waste Management Services,Collections
+394,Non-Res Organic Bin / Retrieval,Solid Waste Management Services,Collections
+395,Non-Res Organic Bin Nite / Not Picked Up,Solid Waste Management Services,Collections
+396,Non-Res Recycle Bin / Not Picked Up,Solid Waste Management Services,Collections
+397,Non-Res Recycle Bin Nite / Not Picked Up,Solid Waste Management Services,Collections
+398,Non-Res XMAS Tree / Not Picked Up,Solid Waste Management Services,Collections
+399,Non-Res XMAS Tree Nite / Not Picked Up,Solid Waste Management Services,Collections
+400,Non-Res Yard Waste / Not Picked Up,Solid Waste Management Services,Collections
+401,Non-Res Yard Waste Nite / Not Picked Up,Solid Waste Management Services,Collections
+402,Non-Residential - Christmas Tree Night Collection - Not Picked Up,Solid Waste Management Services,Collections
+403,Non-Residential - Garbage Bag Night Collection - Not Picked Up,Solid Waste Management Services,Collections
+404,Non-Residential - Garbage Bin Night Collection - Not Picked Up,Solid Waste Management Services,Collections
+405,Non-Residential - Organic Bin Night Collection - Not Picked Up,Solid Waste Management Services,Collections
+406,Non-Residential - Recycling Bin Night Collection - Not Picked Up,Solid Waste Management Services,Collections
+407,Non-Residential Christmas Tree Not Picked Up,Solid Waste Management Services,Collections
+408,Non-residential Front End Loaded Garbage Not Picked Up,Solid Waste Management Services,Collections
+409,Non-residential Front End Loaded Organic Cart Not Picked Up,Solid Waste Management Services,Collections
+410,Non-residential Front End Loaded Organics Not Picked Up,Solid Waste Management Services,Collections
+411,Non-residential Front End Loaded Recycling Cart Not Picked Up,Solid Waste Management Services,Collections
+412,Non-residential Front End Loaded Recycling Not Picked Up,Solid Waste Management Services,Collections
+413,Non-residential Garbage Bag/s Not PIcked Up,Solid Waste Management Services,Collections
+414,Non-residential Garbage Bag/s Not Picked Up,Solid Waste Management Services,Collections
+415,Non-residential Garbage Bin Not Picked Up,Solid Waste Management Services,Collections
+416,Non-residential Organic Bin Not Picked Up,Solid Waste Management Services,Collections
+417,Non-residential Recycling Bin Not Picked Up,Solid Waste Management Services,Collections
+418,Operator / Operations - Compliment - Solid Waste Management,Solid Waste Management Services,Collections
+419,Operator / Operations Compliment,Solid Waste Management Services,Collections
+420,Park Garbage Bin Damaged,Solid Waste Management Services,Collections
+421,Park Garbage Bin Graffiti,Solid Waste Management Services,Collections
+422,Park Garbage Bin Installation,Solid Waste Management Services,Collections
+423,Park Garbage Bin Missing,Solid Waste Management Services,Collections
+424,Park Garbage Bin Overflowing,Solid Waste Management Services,Collections
+425,Park Garbage Bin Relocate or Remove,Solid Waste Management Services,Collections
+426,Park Recycling Bin Damaged,Solid Waste Management Services,Collections
+427,Park Recycling Bin Graffiti,Solid Waste Management Services,Collections
+428,Park Recycling Bin Installation,Solid Waste Management Services,Collections
+429,Park Recycling Bin Missing,Solid Waste Management Services,Collections
+430,Park Recycling Bin Overflowing,Solid Waste Management Services,Collections
+431,Park Recycling Bin Relocation or Removal,Solid Waste Management Services,Collections
+432,Parks Collections Staff - Complaint - Solid Waste Management,Solid Waste Management Services,Collections
+433,Property Damaged - Curbside Day Collection,Solid Waste Management Services,Collections
+434,Property Damaged - Night Collections,Solid Waste Management Services,Collections
+435,Property Damaged - Transfer Station,Solid Waste Management Services,Collections
+436,Property Damaged/Collections Curb Day,Solid Waste Management Services,Collections
+437,Property Damaged/Collections FEL,Solid Waste Management Services,Collections
+438,Property Damaged/Collections Nights,Solid Waste Management Services,Collections
+439,Property Damaged/Litter Operations,Solid Waste Management Services,Collections
+440,Property Damaged/PRM,Solid Waste Management Services,Collections
+441,Recycle / Park / Bin Damaged,Solid Waste Management Services,Collections
+442,Recycle / Park / Bin Graffiti on Bin,Solid Waste Management Services,Collections
+443,Recycle / Park / Bin Installation,Solid Waste Management Services,Collections
+444,Recycle / Park / Bin Missing,Solid Waste Management Services,Collections
+445,Recycle / Park / Bin Overflow,Solid Waste Management Services,Collections
+446,Recycle / Park / Bin Relocate / Removal,Solid Waste Management Services,Collections
+447,Recycling Contamination Notice,Solid Waste Management Services,Collections
+448,Replace Missing Residential Organic Bin,Solid Waste Management Services,Collections
+449,Res / Above Comm / Organic Green Bin / Not Picked Up,Solid Waste Management Services,Collections
+450,Res / Garbage / Multiple Addresses Not Picked Up,Solid Waste Management Services,Collections
+451,Res / Garbage / Not Picked Up,Solid Waste Management Services,Collections
+452,Res / Garbage Front&Side / Not Picked Up,Solid Waste Management Services,Collections
+453,Res / Nite Garbage / Multiple Addresses / Not Picked Up,Solid Waste Management Services,Collections
+454,Res / Nite Garbage / Not Picked Up,Solid Waste Management Services,Collections
+455,Res / Nite Org&Garbage Front&Side / Not Picked Up,Solid Waste Management Services,Collections
+456,Res / Nite Org&Garbage Multiple Addresses / Not Picked Up,Solid Waste Management Services,Collections
+457,Res / Nite Org&Recycle Front&Side / Not Picked Up,Solid Waste Management Services,Collections
+458,Res / Nite Org&Recycle Multiple Addresses / Not Picked Up,Solid Waste Management Services,Collections
+459,Res / Nite Organic / Bin Inquiry,Solid Waste Management Services,Collections
+460,Res / Nite Organic / Not Picked Up,Solid Waste Management Services,Collections
+461,Res / Nite Organic Front&Side / Not Picked Up,Solid Waste Management Services,Collections
+462,Res / Nite Organic&Garbage / Not Picked Up,Solid Waste Management Services,Collections
+463,Res / Nite Organic&Recycle / Not Picked Up,Solid Waste Management Services,Collections
+464,Res / Nite Recycle / Not Picked Up,Solid Waste Management Services,Collections
+465,Res / Nite Recycle Front&Side / Not Picked Up,Solid Waste Management Services,Collections
+466,Res / Nite Recycle Multiple Addresses / Not Picked Up,Solid Waste Management Services,Collections
+467,Res / Nite Yard Waste Multiple Addresses / Not Picked Up,Solid Waste Management Services,Collections
+468,Res / Org&Garbage Front&Side / Not Picked Up,Solid Waste Management Services,Collections
+469,Res / Org&Garbage Multiple Addresses / Not Picked Up,Solid Waste Management Services,Collections
+470,Res / Org&Recycle Front&Side / Not Picked Up,Solid Waste Management Services,Collections
+471,Res / Org&Recycle Multiple Addresses / Not Picked Up,Solid Waste Management Services,Collections
+472,Res / Organic Bin / Additional,Solid Waste Management Services,Collections
+473,Res / Organic Bin / New Account,Solid Waste Management Services,Collections
+474,Res / Organic Bin / New Occupants,Solid Waste Management Services,Collections
+475,Res / Organic Bin / Replace Damaged,Solid Waste Management Services,Collections
+476,Res / Organic Bin / Replace Missing,Solid Waste Management Services,Collections
+477,Res / Organic Bin / Wrong Delivery,Solid Waste Management Services,Collections
+478,Res / Organic Front&Side / Not Picked Up,Solid Waste Management Services,Collections
+479,Res / Organic Green Bin / Multiple Addresses / Not Picked Up,Solid Waste Management Services,Collections
+480,Res / Organic Green Bin / Not Picked Up,Solid Waste Management Services,Collections
+481,Res / Organic Green Bin / Retrieval,Solid Waste Management Services,Collections
+482,Res / Organic&Garbage / Not Picked Up,Solid Waste Management Services,Collections
+483,Res / Organic&Recycle / Not Picked Up,Solid Waste Management Services,Collections
+484,Res / Recycle / Multiple Addresses / Not Picked Up,Solid Waste Management Services,Collections
+485,Res / Recycle / Not Picked Up,Solid Waste Management Services,Collections
+486,Res / Recycle Front&Side / Not Picked Up,Solid Waste Management Services,Collections
+487,Res / Yard Waste Multiple Addresses / Not Picked Up,Solid Waste Management Services,Collections
+488,Res Above Comm / Nite Garbage / Not Picked Up,Solid Waste Management Services,Collections
+489,Res Above Comm / Nite Recycle / Not Picked Up,Solid Waste Management Services,Collections
+490,Res Above Comm / Nite XMAS Tree / Not Picked Up,Solid Waste Management Services,Collections
+491,Res Above Comm / Nite Yard Waste / Not Picked Up,Solid Waste Management Services,Collections
+492,Residential - Garbage Day Collection - Not Picked Up,Solid Waste Management Services,Collections
+493,Residential - Garbage Night Collection - Not Picked Up,Solid Waste Management Services,Collections
+494,Residential - Garbage Night Collection - Whole Street Not Picked Up,Solid Waste Management Services,Collections
+495,Residential - Organic Front and Side Night Collection - Not Picked Up,Solid Waste Management Services,Collections
+496,Residential - Organic Night Collection - Bin Inquiry,Solid Waste Management Services,Collections
+497,Residential - Organic Night Collection - Bin Retrieval,Solid Waste Management Services,Collections
+498,Residential - Organic Night Collection - Not Picked Up,Solid Waste Management Services,Collections
+499,Residential - Organic and Garbage Front and Side Night Collection - Not Picked Up,Solid Waste Management Services,Collections
+500,Residential - Organic and Garbage Night Collection -  Whole Street Not Picked Up,Solid Waste Management Services,Collections
+501,Residential - Organic and Garbage Night Collection - Not Picked Up,Solid Waste Management Services,Collections
+502,Residential - Yard Waste Night Collection - Not Picked Up,Solid Waste Management Services,Collections
+503,Residential - Yard Waste Night Collection - Whole Street Not Picked Up,Solid Waste Management Services,Collections
+504,Residential / Nite Furniture / Not Picked Up,Solid Waste Management Services,Collections
+505,Residential / Nite XMAS Tree / Not Picked Up,Solid Waste Management Services,Collections
+506,Residential / Nite Yard Waste / Not Picked Up,Solid Waste Management Services,Collections
+507,Residential / XMAS Tree / Not Picked Up,Solid Waste Management Services,Collections
+508,Residential / Yard Waste / Missed,Solid Waste Management Services,Collections
+509,Residential / Yard Waste / Not Picked Up,Solid Waste Management Services,Collections
+510,Residential Bin Body or Handle Damaged,Solid Waste Management Services,Collections
+511,Residential Bin Lid Damaged,Solid Waste Management Services,Collections
+512,Residential Bin Metal Bar Damaged,Solid Waste Management Services,Collections
+513,Residential Bin Wheel Damaged,Solid Waste Management Services,Collections
+514,Residential Christmas Tree Not Picked Up,Solid Waste Management Services,Collections
+515,Residential Front & Side Collected Garbage & Organics Not Picked Up,Solid Waste Management Services,Collections
+516,Residential Front & Side Collected Organics Not Picked Up,Solid Waste Management Services,Collections
+517,Residential Front & Side Door Garbage Not Picked Up,Solid Waste Management Services,Collections
+518,Residential Furniture / Not Picked Up,Solid Waste Management Services,Collections
+519,Residential Garbage & Organics Whole Street Not Picked Up,Solid Waste Management Services,Collections
+520,Residential Garbage Not Picked Up on the Whole Street,Solid Waste Management Services,Collections
+521,Residential New Account Organic Bin,Solid Waste Management Services,Collections
+522,Residential Organic & Garbage Not Picked Up,Solid Waste Management Services,Collections
+523,Residential Organic Bin Whole Street Not Picked Up,Solid Waste Management Services,Collections
+524,Residential Organics Not Picked Up,Solid Waste Management Services,Collections
+525,Residential Oversized/Electronics Item Day Collection Not Picked Up,Solid Waste Management Services,Collections
+526,Residential Oversized/Electronics Item Night Collection Not Picked Up,Solid Waste Management Services,Collections
+527,Residential Yard Waste Whole Street Not Picked Up,Solid Waste Management Services,Collections
+528,Residential: Bin: Repair or Replace Body/Handle,Solid Waste Management Services,Collections
+529,Residential: Bin: Repair or Replace Lid,Solid Waste Management Services,Collections
+530,Residential: Bin: Repair or Replace Metal Bar,Solid Waste Management Services,Collections
+531,Residential: Bin: Repair or Replace Wheel,Solid Waste Management Services,Collections
+532,Residential: Bin: Wrong Delivery,Solid Waste Management Services,Collections
+533,Residential: Bin: Wrong Delivery or Bin Return,Solid Waste Management Services,Collections
+534,Residential: Garbage Bin: Additional Extra Large,Solid Waste Management Services,Collections
+535,Residential: Garbage Bin: Additional Large,Solid Waste Management Services,Collections
+536,Residential: Garbage Bin: Additional Medium,Solid Waste Management Services,Collections
+537,Residential: Garbage Bin: Additional Small,Solid Waste Management Services,Collections
+538,Residential: Garbage Bin: Exchange to Extra Large,Solid Waste Management Services,Collections
+539,Residential: Garbage Bin: Exchange to Large,Solid Waste Management Services,Collections
+540,Residential: Garbage Bin: Exchange to Medium,Solid Waste Management Services,Collections
+541,Residential: Garbage Bin: Exchange to Small,Solid Waste Management Services,Collections
+542,Residential: Garbage Bin: Missing,Solid Waste Management Services,Collections
+543,Residential: Garbage Bin: New Account Extra Large,Solid Waste Management Services,Collections
+544,Residential: Garbage Bin: New Account Large,Solid Waste Management Services,Collections
+545,Residential: Garbage Bin: New Account Medium,Solid Waste Management Services,Collections
+546,Residential: Garbage Bin: New Account Small,Solid Waste Management Services,Collections
+547,Residential: Recycle Bin: Additional Extra Large,Solid Waste Management Services,Collections
+548,Residential: Recycle Bin: Additional Large,Solid Waste Management Services,Collections
+549,Residential: Recycle Bin: Additional Medium,Solid Waste Management Services,Collections
+550,Residential: Recycle Bin: Additional Small,Solid Waste Management Services,Collections
+551,Residential: Recycle Bin: Exchange to Extra Large,Solid Waste Management Services,Collections
+552,Residential: Recycle Bin: Exchange to Large,Solid Waste Management Services,Collections
+553,Residential: Recycle Bin: Exchange to Medium,Solid Waste Management Services,Collections
+554,Residential: Recycle Bin: Exchange to Small,Solid Waste Management Services,Collections
+555,Residential: Recycle Bin: Missing,Solid Waste Management Services,Collections
+556,Residential: Recycle Bin: New Account Extra Large,Solid Waste Management Services,Collections
+557,Residential: Recycle Bin: New Account Large,Solid Waste Management Services,Collections
+558,Residential: Recycle Bin: New Account Medium,Solid Waste Management Services,Collections
+559,Residential: Recycle Bin: New Account Small,Solid Waste Management Services,Collections
+560,Residential:Recycle Bin:Exchange to Extra Large,Solid Waste Management Services,Collections
+561,SW_Multi-Res / Organic Bin / Additional,Solid Waste Management Services,Collections
+562,Solid Waste Application Forms,Solid Waste Management Services,Collections
+563,Special Event Litter Pick-up Request,Solid Waste Management Services,Collections
+564,Spills/Cleanup/Collections Curb Day,Solid Waste Management Services,Collections
+565,Spills/Cleanup/Collections FEL,Solid Waste Management Services,Collections
+566,Spills/Cleanup/Collections Nights,Solid Waste Management Services,Collections
+567,Spills/Cleanup/Litter Operations,Solid Waste Management Services,Collections
+568,Spills/Cleanup/PRM,Solid Waste Management Services,Collections
+569,Staff Conduct / Collections / Parks,Solid Waste Management Services,Collections
+570,Staff Conduct/Collections Curb Day,Solid Waste Management Services,Collections
+571,Staff Conduct/Collections FEL,Solid Waste Management Services,Collections
+572,Staff Conduct/Collections Nights,Solid Waste Management Services,Collections
+573,Staff Conduct/Litter Operations,Solid Waste Management Services,Collections
+574,Staff Conduct/Non-Collections,Solid Waste Management Services,Collections
+575,Transfer Station Spill Cleanup,Solid Waste Management Services,Collections
+576,Transfer Station/Drop-off Depot - Complaint - Solid Waste Management,Solid Waste Management Services,Collections
+577,Biohazard Human Waste Removal,Solid Waste Management Services,Collections and Litter Operations
+578,Non-compliance - Single-Use/Takeaway Items,Solid Waste Management Services,Collections and Litter Operations
+579,Park Organic Bin Missing,Solid Waste Management Services,Collections and Litter Operations
+580,Park Organic Bin Overflowing,Solid Waste Management Services,Collections and Litter Operations
+581,Park Organic Bin Relocate or Remove,Solid Waste Management Services,Collections and Litter Operations
+582,Unknown,Solid Waste Management Services,Collections and Litter Operations
+583,Clean up Needles or Syringes,Solid Waste Management Services,Litter Operations
+584,Litter/Needle Cleanup,Solid Waste Management Services,Litter Operations
+585,Lead Water Pipes Record Search,Toronto Water,Business Operations Management
+586,Toronto Water Service Card Request,Toronto Water,Business Operations Management
+587,Water Service Test for High Lead Content,Toronto Water,Business Operations Management
+588,Catch basin (Storm) - Damage,Toronto Water,District Ops
+589,Catch basin (Storm) - Missing Cover,Toronto Water,District Ops
+590,Catch basin (Storm) - Other,Toronto Water,District Ops
+591,Catch basin (Storm) - Overflowing,Toronto Water,District Ops
+592,Catch basin (Storm)-Damage,Toronto Water,District Ops
+593,Catch basin (Storm)-Missing Cover,Toronto Water,District Ops
+594,Catch basin (Storm)-Overflowing,Toronto Water,District Ops
+595,Catch basin (Storm)-Sunken / High,Toronto Water,District Ops
+596,Contractor - Complaint - Toronto Water,Toronto Water,District Ops
+597,District Operations-Attitude and Behavior,Toronto Water,District Ops
+598,District Operations-Compliment,Toronto Water,District Ops
+599,District Operations-Construction Site Unsafe,Toronto Water,District Ops
+600,District Operations-Contractor Related,Toronto Water,District Ops
+601,District Operations-Equipment/Untidy Const Site,Toronto Water,District Ops
+602,District Operations-Process,Toronto Water,District Ops
+603,District Operations-Restoration,Toronto Water,District Ops
+604,District Operations-Timeliness,Toronto Water,District Ops
+605,Emergency Watermain Turn-On,Toronto Water,District Ops
+606,Emergency Watermain Turn-off,Toronto Water,District Ops
+607,Hydrant-After Usage Test,Toronto Water,District Ops
+608,Hydrant-Damage,Toronto Water,District Ops
+609,Hydrant-Leaking,Toronto Water,District Ops
+610,Locate-Scheduled,Toronto Water,District Ops
+611,Lost Items in Catch Basin,Toronto Water,District Ops
+612,Maintenance Hole - Overflowing,Toronto Water,District Ops
+613,Maintenance Hole-Damage,Toronto Water,District Ops
+614,Maintenance Hole-Missing Cover,Toronto Water,District Ops
+615,Maintenance Hole-Noisy Cover,Toronto Water,District Ops
+616,New Large Water Service Turn-On,Toronto Water,District Ops
+617,Pollution Spill & Illegal Dumping Response,Toronto Water,District Ops
+618,Pollution Spill Response,Toronto Water,District Ops
+619,Process or Procedure - Complaint - Toronto Water,Toronto Water,District Ops
+620,Request Water Service Turn Off,Toronto Water,District Ops
+621,Request Water Service Turn On,Toronto Water,District Ops
+622,Restoration - Complaint - Toronto Water,Toronto Water,District Ops
+623,Restoration Related,Toronto Water,District Ops
+624,Salting - Toronto Water Asset or Site,Toronto Water,District Ops
+625,Salting-Winter (WSL/HYDT/VALVE/Watermain Break Locations etc.),Toronto Water,District Ops
+626,Sewer Odour,Toronto Water,District Ops
+627,Sewer Service Line-Blocked,Toronto Water,District Ops
+628,Sewer Service Line-Cleanout Repair,Toronto Water,District Ops
+629,Sewer main-Backup,Toronto Water,District Ops
+630,Sewer-See and Advise,Toronto Water,District Ops
+631,Sink Hole,Toronto Water,District Ops
+632,Staff - Complaint - Toronto Water,Toronto Water,District Ops
+633,Staff - Compliment - Toronto Water,Toronto Water,District Ops
+634,Storm Event-Flooding,Toronto Water,District Ops
+635,Timeliness - Complaint - Toronto Water,Toronto Water,District Ops
+636,Unsafe Construction Site - Complaint - Toronto Water,Toronto Water,District Ops
+637,Untidy Construction Site/ Equipment - Complaint - Toronto Water,Toronto Water,District Ops
+638,Water Meter Strong Leak or Burst,Toronto Water,District Ops
+639,Water Meter-Leaking,Toronto Water,District Ops
+640,Water Quality-Discoloured (Rusty or dirty) Water,Toronto Water,District Ops
+641,Water Service Line - Low Pressure|| Low Flow - Ongoing,Toronto Water,District Ops
+642,Water Service Line - Low Pressure|| Low Flow - Ongoing - Non-residential,Toronto Water,District Ops
+643,Water Service Line - Low Pressure|| Low Flow Inspection - (Sudden),Toronto Water,District Ops
+644,Water Service Line-Check Water Service Box,Toronto Water,District Ops
+645,Water Service Line-Leaking,Toronto Water,District Ops
+646,Water Service Line-No Water,Toronto Water,District Ops
+647,Water Service Line-Turn Off,Toronto Water,District Ops
+648,Water Service Line-Turn Off/Burst,Toronto Water,District Ops
+649,Water Service Line-Turn On,Toronto Water,District Ops
+650,Water Service Valve Leaking,Toronto Water,District Ops
+651,Water Valve-Leaking,Toronto Water,District Ops
+652,Water and Sewer Service Applications,Toronto Water,District Ops
+653,Water-Miscellaneous,Toronto Water,District Ops
+654,Watercourse Investigation,Toronto Water,District Ops
+655,Watermain Emergency Valve - Turn Off,Toronto Water,District Ops
+656,Watermain Emergency Valve-Turn Off,Toronto Water,District Ops
+657,Watermain Valve - Turn Off,Toronto Water,District Ops
+658,Watermain Valve - Turn On,Toronto Water,District Ops
+659,Watermain emergency Valve - Turn On,Toronto Water,District Ops
+660,Watermain-Possible Break,Toronto Water,District Ops
+661,Graffiti on Temporary Condition Signs or Temporary Control Devices,Transportation Services,District Ops
+662,Hazardous Plant Removal on Boulevards,Transportation Services,District Ops
+663,King Liberty Pedestrian Bridge Elevator Repair,Transportation Services,District Ops
+664,Missing or Damaged Bike Lane Flexible Bollards,Transportation Services,District Ops
+665,Missing/Damaged Flexible Bollards,Transportation Services,District Ops
+666,Automated Speed Enforcement (ASE ) Camera Vandalism or Damage,Transportation Services,Permits & Enforcement
+667,Bylaw Enforcement: Excavation,Transportation Services,Right of Way (ROW)
+668,Caf�TO Encroachment Complaint,Transportation Services,Right of Way (ROW)
+669,Complaint - Abandoned Bikes in Rideable Condition,Transportation Services,Right of Way (ROW)
+670,Complaint / Investigation - Grass and Weeds Enforcement,Transportation Services,Right of Way (ROW)
+671,Complaint / Investigation - Idling Enforcement,Transportation Services,Right of Way (ROW)
+672,Complaint / Investigation - Leaves,Transportation Services,Right of Way (ROW)
+673,Complaint / Investigation - Water Discharge,Transportation Services,Right of Way (ROW)
+674,Complaint/Investigation - Encroachment,Transportation Services,Right of Way (ROW)
+675,Complaint/Investigation -Abandoned Bikes,Transportation Services,Right of Way (ROW)
+676,Free-floating Car Share - Parking Complaint - Communauto Flex,Transportation Services,Right of Way (ROW)
+677,Free-floating Car Share - Parking Complaint - Zipcar,Transportation Services,Right of Way (ROW)
+678,Ice and Snow Complaint,Transportation Services,Right of Way (ROW)
+679,Illegal Off-Street Parking,Transportation Services,Right of Way (ROW)
+680,Illegal On-Street Parking,Transportation Services,Right of Way (ROW)
+681,Illegal Snow Dumping & Failure to Clear Snow or Ice on Public Sidewalk,Transportation Services,Right of Way (ROW)
+682,Investigate Mud or Water Discharge on the Street Allowance,Transportation Services,Right of Way (ROW)
+683,Long Grass and Weeds on the Boulevard,Transportation Services,Right of Way (ROW)
+684,Report an Encroachment on City Property,Transportation Services,Right of Way (ROW)
+685,Access - Complaint - Road Operations,Transportation Services,Road Operations
+686,Accessibility / Disability - Complaint - Transportation Services,Transportation Services,Road Operations
+687,Bicycle Stand (Post and Ring) Repair or Graffiti Removal,Transportation Services,Road Operations
+688,Bike Lane - Winter Maintenance Required,Transportation Services,Road Operations
+689,Bike Lane Winter Maintenance Required,Transportation Services,Road Operations
+690,Bollard - Damaged,Transportation Services,Road Operations
+691,Boulevard - Leaf Pick-up Mechanical,Transportation Services,Road Operations
+692,Boulevard - Pick-Up Shopping Carts,Transportation Services,Road Operations
+693,Boulevard - Plough Damage,Transportation Services,Road Operations
+694,Boulevard Grass or Sod Damage,Transportation Services,Road Operations
+695,Boulevard Plow Damage,Transportation Services,Road Operations
+696,Boulevards - Damaged Asphalt,Transportation Services,Road Operations
+697,Boulevards - Snow Piled Too High / Too Much,Transportation Services,Road Operations
+698,Boulevards - Weed Removal,Transportation Services,Road Operations
+699,Boulevards-Grass Cutting,Transportation Services,Road Operations
+700,Bridge - Damaged Structure,Transportation Services,Road Operations
+701,Bridge - Debris / Litter,Transportation Services,Road Operations
+702,Bridge - Graffiti Complaint,Transportation Services,Road Operations
+703,Bridge - Surface Repair,Transportation Services,Road Operations
+704,Bridge Falling Debris,Transportation Services,Road Operations
+705,Bridge Icy Needs Sand/Salt,Transportation Services,Road Operations
+706,Bus Stop Icy Needs Sand/Salt,Transportation Services,Road Operations
+707,Bus Stops Snow Clearing Required,Transportation Services,Road Operations
+708,Catch Basin - Blocked / Flooding,Transportation Services,Road Operations
+709,Catch Basin - Damaged Maintenance Requested,Transportation Services,Road Operations
+710,Catch Basin - Debris / Litter,Transportation Services,Road Operations
+711,Catch Basin -Cover Missing / Damaged / Loose,Transportation Services,Road Operations
+712,Catch basin Maintenance and Repair,Transportation Services,Road Operations
+713,Catch basin on Expressway damaged,Transportation Services,Road Operations
+714,Catch basin on Expressway requires cleaning,Transportation Services,Road Operations
+715,Clean up Debris on Road,Transportation Services,Road Operations
+716,Clean up Illegal Dumping on Roadways and Bridge Underpass,Transportation Services,Road Operations
+717,Complaint regarding Contractor,Transportation Services,Road Operations
+718,Complaint-Access,Transportation Services,Road Operations
+719,Complaint-Disability,Transportation Services,Road Operations
+720,Complaint-Outcome of the Service,Transportation Services,Road Operations
+721,Complaint-Process and Procedures,Transportation Services,Road Operations
+722,Complaint-Staff Conduct,Transportation Services,Road Operations
+723,Complaint-Time Line of the Service,Transportation Services,Road Operations
+724,Compliment-Employee/Operation,Transportation Services,Road Operations
+725,Contractor Complaint,Transportation Services,Road Operations
+726,Culverts - Blocked,Transportation Services,Road Operations
+727,Culverts-Damaged / Maintenance Requested,Transportation Services,Road Operations
+728,Curb - Adjust Height (Too High/Low),Transportation Services,Road Operations
+729,Curb - Damaged,Transportation Services,Road Operations
+730,Damaged Catch Basin on the Road,Transportation Services,Road Operations
+731,Damaged Catch Basin on the Roadside,Transportation Services,Road Operations
+732,Damaged Concrete Sidewalk,Transportation Services,Road Operations
+733,Dead Animal On Expressway,Transportation Services,Road Operations
+734,Ditch Maintenance Request,Transportation Services,Road Operations
+735,Ditch Maintenance Requested,Transportation Services,Road Operations
+736,Driveway - Damaged,Transportation Services,Road Operations
+737,Driveway - Damaged / Ponding,Transportation Services,Road Operations
+738,Driveway Blocked By Plowed Snowbank,Transportation Services,Road Operations
+739,Driveway-Blocked By Windrow,Transportation Services,Road Operations
+740,Expressway Fence - Damaged,Transportation Services,Road Operations
+741,Expressway Guide Rail Damaged,Transportation Services,Road Operations
+742,Expressway Requires Cleaning,Transportation Services,Road Operations
+743,Expressway requires cleaning.,Transportation Services,Road Operations
+744,Fence - Damaged,Transportation Services,Road Operations
+745,Guardrail - Damaged,Transportation Services,Road Operations
+746,Icy Bridge Needs Salting,Transportation Services,Road Operations
+747,Icy Bus Stop Needs Salting,Transportation Services,Road Operations
+748,Icy Sidewalk Needs Salting,Transportation Services,Road Operations
+749,Illegal Dumping on Road,Transportation Services,Road Operations
+750,Illegal Dumping on Roadside,Transportation Services,Road Operations
+751,Laneway - Salting / Sanding / Salt,Transportation Services,Road Operations
+752,Laneway - Surface Damage,Transportation Services,Road Operations
+753,Laneway Needs Salting,Transportation Services,Road Operations
+754,Maintenance Holes -Damage / Repair,Transportation Services,Road Operations
+755,Maintenance Holes Lid Loose/Missing,Transportation Services,Road Operations
+756,Minor Road Damage,Transportation Services,Road Operations
+757,Missed Leaf Collection,Transportation Services,Road Operations
+758,Outcome of Service - Complaint - Road Operations,Transportation Services,Road Operations
+759,Pot hole on Expressway,Transportation Services,Road Operations
+760,Pothole on Expressway,Transportation Services,Road Operations
+761,Process and Procedures - Complaint - Road Operations,Transportation Services,Road Operations
+762,Retaining Wall - Damage / Repair,Transportation Services,Road Operations
+763,Road - Cleaning/Debris,Transportation Services,Road Operations
+764,Road - Damaged,Transportation Services,Road Operations
+765,Road - Graffiti Complaint,Transportation Services,Road Operations
+766,Road - Gravel Roads/Construction,Transportation Services,Road Operations
+767,Road - Plough Damage,Transportation Services,Road Operations
+768,Road - Pot hole,Transportation Services,Road Operations
+769,Road - Sanding / Salting Required,Transportation Services,Road Operations
+770,Road - Sinking,Transportation Services,Road Operations
+771,Road Ploughing Required,Transportation Services,Road Operations
+772,Road Plow Damage,Transportation Services,Road Operations
+773,Road Plowing Request,Transportation Services,Road Operations
+774,Road Pothole / Road Damage,Transportation Services,Road Operations
+775,Road Salting Request,Transportation Services,Road Operations
+776,Road Water Ponding,Transportation Services,Road Operations
+777,Road damaged on Expressway,Transportation Services,Road Operations
+778,Road-Winter Request/ Complaint,Transportation Services,Road Operations
+779,Roadside - Plough Damage,Transportation Services,Road Operations
+780,Roadside Utility Cut - Settlement,Transportation Services,Road Operations
+781,Roadway Utility Cut - Settlement,Transportation Services,Road Operations
+782,School Zone Snow Clearing,Transportation Services,Road Operations
+783,Shoulder - Maintenance,Transportation Services,Road Operations
+784,Shoulder on Expressway Damaged,Transportation Services,Road Operations
+785,Sidewalk - Accessible Ramps & Tactile Pavers,Transportation Services,Road Operations
+786,Sidewalk - Cleaning,Transportation Services,Road Operations
+787,Sidewalk - Damaged / Concrete,Transportation Services,Road Operations
+788,Sidewalk - Damaged /Brick/Interlock,Transportation Services,Road Operations
+789,Sidewalk - Graffiti Complaint,Transportation Services,Road Operations
+790,Sidewalk - Paraplegic Ramps,Transportation Services,Road Operations
+791,Sidewalk - Seniors Snow Clearing,Transportation Services,Road Operations
+792,Sidewalk - Snow Clearing,Transportation Services,Road Operations
+793,Sidewalk Icy|| Needs Sand/Salt,Transportation Services,Road Operations
+794,Sidewalk Snow Clearing Required,Transportation Services,Road Operations
+795,Sidewalk-Water Ponding,Transportation Services,Road Operations
+796,Snow Removal - General,Transportation Services,Road Operations
+797,Snow Removal - School Zone,Transportation Services,Road Operations
+798,Snow Removal - Sightline Problem,Transportation Services,Road Operations
+799,Snow at Intersections - Impeded Mobility,Transportation Services,Road Operations
+800,Staff Service - Complaint - Road Operations,Transportation Services,Road Operations
+801,Staff Service - Compliment - Road Operations,Transportation Services,Road Operations
+802,Street Furniture Request,Transportation Services,Road Operations
+803,Street furniture damaged,Transportation Services,Road Operations
+804,Timeliness of Service - Complaint - Road Operations,Transportation Services,Road Operations
+805,Traffic Island - Damaged,Transportation Services,Road Operations
+806,Traffic Island-Grass Needs Cutting,Transportation Services,Road Operations
+807,Walkway - Damaged or Uneven,Transportation Services,Road Operations
+808,Walkway - Snow Clearing/ Salting required,Transportation Services,Road Operations
+809,Walkway - damaged,Transportation Services,Road Operations
+810,Walkway Snow Clearing/Salting Request,Transportation Services,Road Operations
+811,Walkway-Weeds Need Cutting,Transportation Services,Road Operations
+812,West Nile Virus - Standing Water / Roadway,Transportation Services,Road Operations
+813,West Nile Virus-Standing Water / Roadside,Transportation Services,Road Operations
+814,Flashing Beacon Maintenance,Transportation Services,TMC
+815,Missing / Damaged Street or Traffic Signs,Transportation Services,TMC
+816,Missing/Damaged Flexible Bollards,Transportation Services,TMC
+817,Missing/Damaged In Road Flexible Sign,Transportation Services,TMC
+818,Missing/Damaged School Flashing Beacons,Transportation Services,TMC
+819,Missing/Damaged Signs,Transportation Services,TMC
+820,Missing/Damaged Watch Your Speed Boards,Transportation Services,TMC
+821,Missing/Damaged/Faded Emergency Traffic Signs,Transportation Services,TMC
+822,Missing/Damaged/Faded/Relocating Street Name or Traffic Signs,Transportation Services,TMC
+823,Missing/Faded Pavement Markings,Transportation Services,TMC
+824,PXO Maintenance,Transportation Services,TMC
+825,Pedestrian Crossover (PXO) Maintenance,Transportation Services,TMC
+826,RESCU Maintenance,Transportation Services,TMC
+827,Respond to Locates Request,Transportation Services,TMC
+828,Sign Maintenance,Transportation Services,TMC
+829,Traffic Camera (RESCU) Maintenance,Transportation Services,TMC
+830,Traffic Sign - Graffiti Complaint,Transportation Services,TMC
+831,Traffic Signal - Graffiti Complaint,Transportation Services,TMC
+832,Traffic Signal Equipment - Graffiti Complaint,Transportation Services,TMC
+833,Traffic Signal Maintenance,Transportation Services,TMC
+834,Traffic Signal Repair,Transportation Services,TMC
+835,Traffic or Street Name Sign - Graffiti Complaint,Transportation Services,TMC
+836,Bicycle Signal Issue,Transportation Services,Traffic Management
+837,Bike Lane Pavement Damage,Transportation Services,Traffic Management
+838,Bike Lane Pothole,Transportation Services,Traffic Management
+839,Bus/Streetcar Signal Issues,Transportation Services,Traffic Management
+840,Damaged Bike Lane Barrier,Transportation Services,Traffic Management
+841,Damaged or Shifted Concrete or Planter Bike Lane Barrier,Transportation Services,Traffic Management
+842,Pedestrian Signal Issue,Transportation Services,Traffic Management
+843,Traffic Signal Information Requests,Transportation Services,Traffic Management
+844,Vehicle Traffic Signal Issue,Transportation Services,Traffic Management
+845,All-Way Stop Control Sign,Transportation Services,Traffic Ops
+846,All-Way Stop Sign Controls,Transportation Services,Traffic Ops
+847,Alternate Side Parking,Transportation Services,Traffic Ops
+848,Bicycle Signals,Transportation Services,Traffic Ops
+849,Blocked Access By Parking,Transportation Services,Traffic Ops
+850,Commercial Loading Zone,Transportation Services,Traffic Ops
+851,Community Traffic Study,Transportation Services,Traffic Ops
+852,Corner Parking Prohibition,Transportation Services,Traffic Ops
+853,Disabled Loading Zone,Transportation Services,Traffic Ops
+854,Disabled Persons' Parking Space,Transportation Services,Traffic Ops
+855,General Parking Regulations,Transportation Services,Traffic Ops
+856,Heavy Trucks,Transportation Services,Traffic Ops
+857,Intersection Safety Review,Transportation Services,Traffic Ops
+858,Investigate Guide and Information Signs,Transportation Services,Traffic Ops
+859,Investigate Pavement Markings,Transportation Services,Traffic Ops
+860,Investigate Regulatory Signs,Transportation Services,Traffic Ops
+861,Investigate Temporary Condition Markings,Transportation Services,Traffic Ops
+862,Investigate Temporary Condition Signs,Transportation Services,Traffic Ops
+863,Investigate Vehicles Leaving Roadway,Transportation Services,Traffic Ops
+864,Investigate Warning Signs,Transportation Services,Traffic Ops
+865,Lane Designation,Transportation Services,Traffic Ops
+866,Left/Right Turn Signal Priority Features,Transportation Services,Traffic Ops
+867,Mode of Control of TCS,Transportation Services,Traffic Ops
+868,Motor Coach Parking,Transportation Services,Traffic Ops
+869,New Pedestrian Crossover,Transportation Services,Traffic Ops
+870,New Traffic Control Signal Request,Transportation Services,Traffic Ops
+871,One-way Streets,Transportation Services,Traffic Ops
+872,Parking in a Public Lane,Transportation Services,Traffic Ops
+873,Pedestrian Crossing Protection,Transportation Services,Traffic Ops
+874,Pedestrian Crossover Operation,Transportation Services,Traffic Ops
+875,Pedestrian Issues / Timing / Delays,Transportation Services,Traffic Ops
+876,Pedestrian Issues/Timing/Delays,Transportation Services,Traffic Ops
+877,Pedestrian Refuge Island,Transportation Services,Traffic Ops
+878,Public Transit Loading Zone,Transportation Services,Traffic Ops
+879,Request for Special Parking Consideration,Transportation Services,Traffic Ops
+880,Reserved Lane,Transportation Services,Traffic Ops
+881,Residential Permit Parking,Transportation Services,Traffic Ops
+882,Road Design,Transportation Services,Traffic Ops
+883,School Bus Loading Zone,Transportation Services,Traffic Ops
+884,School Crossing Guard Shift Time Change Request,Transportation Services,Traffic Ops
+885,School Safety Programs,Transportation Services,Traffic Ops
+886,School Zone Safety Review,Transportation Services,Traffic Ops
+887,School-Related Warning Signs,Transportation Services,Traffic Ops
+888,Sight Line Obstruction,Transportation Services,Traffic Ops
+889,Signal Timing Review/Vehicle Delays,Transportation Services,Traffic Ops
+890,Special Parking Consideration,Transportation Services,Traffic Ops
+891,Speed Bumps in Laneway,Transportation Services,Traffic Ops
+892,Speed Watch Programme,Transportation Services,Traffic Ops
+893,Speeding,Transportation Services,Traffic Ops
+894,Streetcar Platforms,Transportation Services,Traffic Ops
+895,Student Crossing Issues,Transportation Services,Traffic Ops
+896,Student Pick-up/Drop-off Area,Transportation Services,Traffic Ops
+897,Taxicab Stand,Transportation Services,Traffic Ops
+898,Temporary Signal Timings,Transportation Services,Traffic Ops
+899,Time Limit or Excessive Duration Parking,Transportation Services,Traffic Ops
+900,Traffic Calming Measures,Transportation Services,Traffic Ops
+901,Traffic Infiltration,Transportation Services,Traffic Ops
+902,Complaint - Crossing Guard Conduct,Transportation Services,Traffic Safety
+903,School Crossing Guard - No Show,Transportation Services,Traffic Safety
+904,Unknown - 30080-EH,Unknown,Unknown
+905,Unknown - 30080-NEH,Unknown,Unknown
+906,Unknown - 30080-ROE,Unknown,Unknown
+907,Unknown - AE-ASE02,Unknown,Unknown
+908,Unknown - CSROBKL-01,Unknown,Unknown
+909,Unknown - CSROBKL-02,Unknown,Unknown
+910,Unknown - CSROBKL-03,Unknown,Unknown
+911,Unknown - F--RNFP10,Unknown,Unknown
+912,Unknown - F--RNFP14,Unknown,Unknown
+913,Unknown - F--TPPR1,Unknown,Unknown
+914,Unknown - F--TPPR15,Unknown,Unknown
+915,Unknown - F--TPPR9,Unknown,Unknown
+916,Unknown - MLSBLEMMVN,Unknown,Unknown
+917,Unknown - MLSBLENE,Unknown,Unknown
+918,Unknown - NRLPA,Unknown,Unknown
+919,Unknown - SRVCR,Unknown,Unknown
+920,Unknown - SWLMALO-14,Unknown,Unknown
+921,Unknown - SWM-SUTI-BylawNC,Unknown,Unknown
+922,Unknown - TAS56,Unknown,Unknown
+923,Unknown - TAS57,Unknown,Unknown
+924,Unknown - TASTS,Unknown,Unknown
+925,Unknown - TPROW-14,Unknown,Unknown
+926,Unknown - TS-STFURN-REQ,Unknown,Unknown
+927,Unknown - TSO-CMP01,Unknown,Unknown
+928,Unknown - TSO-CMP02,Unknown,Unknown
+929,Unknown - TSO-CMP03,Unknown,Unknown
+930,Unknown - TSO-CMP04,Unknown,Unknown
+931,Unknown - TSO-CMP05,Unknown,Unknown
+932,Unknown - TSO-CMP06,Unknown,Unknown
+933,Unknown - TSO-CMP07,Unknown,Unknown
+934,Unknown - TSO-CMP08,Unknown,Unknown
+935,Unknown - TSO-CMP09,Unknown,Unknown
+936,Unknown - TSO-CMP10,Unknown,Unknown
+937,Unknown - TSO-CMP12,Unknown,Unknown
+938,Unknown - TSO-CMP13,Unknown,Unknown
+939,Unknown - TSO-CMP14,Unknown,Unknown
+940,Unknown - TSO-CMP17,Unknown,Unknown
+941,Unknown - TSO-CMP18,Unknown,Unknown
+942,Unknown - TSO-CSOI,Unknown,Unknown
+943,Unknown - TSO-OTHERS,Unknown,Unknown
+944,Unknown - TSO-PSOI,Unknown,Unknown
+945,Unknown - TSO-SCG01,Unknown,Unknown
+946,Unknown - TSO-ST01,Unknown,Unknown
+947,Unknown - TSO-ST02,Unknown,Unknown
+948,Unknown - TSO-ST03,Unknown,Unknown
+949,Unknown - TSO-ST04,Unknown,Unknown
+950,Unknown - TSO-ST05,Unknown,Unknown
+951,Unknown - TSO-TSOI,Unknown,Unknown
+952,Unknown - TSO-VSOI,Unknown,Unknown
+953,Unknown - TSO-VZ01,Unknown,Unknown
+954,Unknown - TSO-VZ02,Unknown,Unknown
+955,Unknown - TSO-VZ04,Unknown,Unknown
+956,Unknown - TSO-VZ05,Unknown,Unknown
+957,Unknown - TSO-VZ06,Unknown,Unknown
+958,Unknown - TSO-VZ07,Unknown,Unknown
+959,Unknown - TSO-VZ08,Unknown,Unknown
+960,Unknown - TSO-VZ10,Unknown,Unknown
+961,Unknown - TSO-VZ12,Unknown,Unknown
+962,Unknown - TSO-VZ13,Unknown,Unknown
+963,Unknown - TSO-VZ14,Unknown,Unknown
+964,Unknown - WSLNT,Unknown,Unknown
+965,Unknown - cotdrivercomplaint,Unknown,Unknown
+966,Unknown - cotdrivercompliment,Unknown,Unknown
